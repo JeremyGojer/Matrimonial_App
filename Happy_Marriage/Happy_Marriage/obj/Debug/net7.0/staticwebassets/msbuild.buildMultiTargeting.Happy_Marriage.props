@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Happy_Marriage.props" />
+</Project>
