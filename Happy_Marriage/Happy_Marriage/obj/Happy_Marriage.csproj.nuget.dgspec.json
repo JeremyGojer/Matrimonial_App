@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jerem\\Desktop\\DOTNET\\DOTNET_PROJECTS\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj": {}
+    "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jerem\\Desktop\\DOTNET\\DOTNET_PROJECTS\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj": {
+    "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jerem\\Desktop\\DOTNET\\DOTNET_PROJECTS\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
+        "projectUniqueName": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
         "projectName": "Happy_Marriage",
-        "projectPath": "C:\\Users\\jerem\\Desktop\\DOTNET\\DOTNET_PROJECTS\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
+        "projectPath": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
         "packagesPath": "C:\\Users\\jerem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jerem\\Desktop\\DOTNET\\DOTNET_PROJECTS\\Happy_Marriage\\Happy_Marriage\\obj\\",
+        "outputPath": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jerem\\AppData\\Roaming\\NuGet\\NuGet.Config",

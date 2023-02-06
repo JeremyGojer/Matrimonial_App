@@ -13,11 +13,11 @@ namespace Happy_Marriage.Models
         public string? Password { get; set; }
         public string? ContactNumber { get; set; }
         public string? Role { get; set; }
-        public DateOnly JoinedOn { get; set; }
+        public DateTime JoinedOn { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Gender { get; set; }
-        public DateOnly DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string? Religion { get; set; }
 
     }

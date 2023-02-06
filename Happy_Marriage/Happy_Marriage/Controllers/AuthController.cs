@@ -38,9 +38,15 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string username, string email, string password) {
-            
-            
+        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth, string gender, string religion) {
+            User_Register user= new User_Register{UserName=username, Email=email, Password=password,
+                        FirstName=firstname, LastName=lastname, ContactNumber=contactnumber,
+                        Gender=gender, Religion=religion, DateOfBirth=dateofbirth
+            };
+            if (_userServices.GetUserByEmail(email) == null)
+            {
+                _userServices.Register(user);
+            }
             return View();
         }
     }
