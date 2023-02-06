@@ -11,6 +11,8 @@ namespace Happy_Marriage.Services.Interfaces
         public User Delete(User user);
 
         public User Update(User user);
-        User GetUserByEmail(string email);
+        public User GetUserByEmail(string email);
+
+        public User_Register Register(User_Register user_r);
     }
 }

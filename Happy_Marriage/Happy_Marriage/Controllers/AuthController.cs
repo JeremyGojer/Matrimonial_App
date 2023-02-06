@@ -36,5 +36,12 @@ namespace Happy_Marriage.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Register(string username, string email, string password) {
+            
+            
+            return View();
+        }
     }
 }

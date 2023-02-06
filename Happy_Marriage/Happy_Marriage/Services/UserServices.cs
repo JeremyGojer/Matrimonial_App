@@ -23,6 +23,8 @@ namespace Happy_Marriage.Services
 
         public User GetUserByEmail(string email) => _userManager.GetUserByEmail(email);
 
+        public User_Register Register(User_Register user_r) => _userManager.Register(user_r);
+
 
     }
 }
