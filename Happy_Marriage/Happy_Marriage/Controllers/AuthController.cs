@@ -26,9 +26,12 @@ namespace Happy_Marriage.Controllers
         [HttpPost]
         public IActionResult Login(string email,string password) {
             User user = _userServices.GetUserByEmail(email);
-            if (user != null) { 
-                return RedirectToAction("Index", "Home");
+            if (user != null && user.Password == password) { 
+                //Redirect to landing page
+                return RedirectToAction("Success", "Home");
             }
+            //Back to login form
+            ViewData["msg"] = "Incorrect credentials, please try again";
             return View();
         }
 
@@ -46,7 +49,9 @@ namespace Happy_Marriage.Controllers
             if (_userServices.GetUserByEmail(email) == null)
             {
                 _userServices.Register(user);
+                return RedirectToAction("Success","Home");
             }
+            ViewData["msg"] = "Something went wrong, please check details again";
             return View();
         }
     }

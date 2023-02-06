@@ -1,6 +1,8 @@
 ﻿
 @{
     ViewData["Title"] = "Login";
+    string msg = ViewData["msg"] as string;
+
 }
 
 <h1>Login</h1>
@@ -35,7 +37,9 @@
                                         <input type="password" id="password" name="password" class="form-control form-control-lg" />
                                         <label class="form-label" for="password">Password</label>
                                     </div>
-
+                                    @if (msg != null) {
+                                        <div style="color = red;">@msg</div>
+                                    }
                                     <div class="pt-1 mb-4">
                                         <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                                     </div>

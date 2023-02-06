@@ -1,6 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@{
+    string msg = ViewData["msg"] as string;
+}
 
 <div class="text-center bg-warning">
     <h1>Register Yourself Here</h1>
@@ -69,7 +69,10 @@
             </div>
         </div>
         <br/>
-
+        @if (msg != null)
+        {
+            <div>@msg</div>
+        }
         <button type="submit" class="btn btn-dark btn-lg btn-block">Register</button>
     </form>
 </div>
