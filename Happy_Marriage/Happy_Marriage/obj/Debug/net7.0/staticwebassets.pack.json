@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\images\\Default_Profile_Pic.jpg",
+      "PackagePath": "staticwebassets\\images\\Default_Profile_Pic.jpg"
+    },
+    {
       "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\images\\LoginPageImage.jpg",
       "PackagePath": "staticwebassets\\images\\LoginPageImage.jpg"
     },

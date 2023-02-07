@@ -45,20 +45,27 @@
 
             <div class="col" >
             <label for="gender">Gender:</label>
-                <select id="gender" class="form-control" required>
-                    <option value="Male">Male</option>
+                <select id="gender" class="form-control" >
+                    <option value="Select">Select</option>
+                    <option value="Male" selected>Male</option>
                     <option value="Female">Female</option>
                 </select>
             </div>
 
             <div class="col">
                 <label for="religion">Religion:</label>
-                <input type="text" class="form-control" id="religion" name="religion" placeholder="Religion">
+                <input type="text" class="form-control" id="religion" name="religion" placeholder="Religion" required>
             </div>
 
         </div>
 
         <div class="row">
+
+            <div class="col">
+                <label for="job">Job Designation:</label>
+                <input type="text" class="form-control" id="job" name="job" placeholder="your job description" required>
+            </div>
+
             <div class="col">
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="min characters 8 max 13" required>

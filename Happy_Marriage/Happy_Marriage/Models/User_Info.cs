@@ -13,6 +13,7 @@ namespace Happy_Marriage.Models
         public string? LastName { get; set; }
         public string? Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public string? Job { get; set; }
         public string? Religion { get; set; }
         
     }

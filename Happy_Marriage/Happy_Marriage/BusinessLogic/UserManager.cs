@@ -62,6 +62,7 @@ namespace Happy_Marriage.BusinessLogic
                                                   LastName=user_r.LastName,
                                                   Gender= user_r.Gender,
                                                   DateOfBirth=user_r.DateOfBirth,
+                                                  Job=user_r.Job,
                                                   Religion=user_r.Religion
                                                 };
             //Insert data in Users_Info Table
