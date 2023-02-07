@@ -1,6 +1,7 @@
 ﻿using Happy_Marriage.Models;
 using Happy_Marriage.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace Happy_Marriage.Controllers
 {
@@ -26,13 +27,20 @@ namespace Happy_Marriage.Controllers
         [HttpPost]
         public IActionResult Login(string email,string password) {
             User user = _userServices.GetUserByEmail(email);
-            if (user != null && user.Password == password) { 
+            if (user != null && user.Password == password) {
                 //Redirect to landing page
+                string jsonuser = JsonSerializer.Serialize(user);
+                HttpContext.Session.SetString("user",jsonuser);
                 return RedirectToAction("Success", "Home");
             }
             //Back to login form
             ViewData["msg"] = "Incorrect credentials, please try again";
             return View();
+        }
+
+        public IActionResult LogOut() { 
+            HttpContext.Session.Remove("user");
+            return RedirectToAction("Index","Home");
         }
 
         public IActionResult Register()

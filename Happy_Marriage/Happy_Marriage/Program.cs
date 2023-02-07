@@ -4,12 +4,27 @@ using Happy_Marriage.BusinessLogic.Interfaces;
 using Happy_Marriage.Services;
 using Happy_Marriage.Services.Interfaces;
 using Happy_Marriage.Utilities;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Getting mysql connection from appsettings.json
+string constring = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+builder.Services.AddDbContext<DBEntityContext>(options => { options.UseMySQL(constring); });
+
 
 //Services Injection
 builder.Services.AddTransient<IUserManager,UserManager>();
 builder.Services.AddTransient<IUserServices,UserServices>();
+builder.Services.AddTransient<DBEntityContext>();
+
+//Add where the session will be stored
+builder.Services.AddDistributedMemoryCache();
+
+//Session management on server side
+builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromSeconds(10);
+                                         options.Cookie.HttpOnly = true;
+                                         options.Cookie.IsEssential= true;} );
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -30,6 +45,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+//middleware settings for session
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

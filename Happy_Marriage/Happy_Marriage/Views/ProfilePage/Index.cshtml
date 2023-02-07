@@ -1,0 +1,19 @@
+﻿@using Happy_Marriage.Models
+@using Happy_Marriage.Services
+@{
+    User user = ViewData["user"] as User;
+
+    User_Info userinfo = ViewData["userinfo"] as User_Info;
+
+}
+<div class="text-center">
+
+    <h1>About You</h1>
+    <table class="table table-hover">
+        <tr><td>FirstName</td><td>@userinfo.FirstName</td></tr>
+        <tr><td>LastName</td><td>@userinfo.LastName</td></tr>
+        <tr><td>Date of Birth</td><td>@userinfo.DateOfBirth</td></tr>
+        <tr><td>Gender</td><td>@userinfo.Gender</td></tr>
+        <tr><td>Religion</td><td>@userinfo.Religion</td></tr>
+    </table>
+</div>

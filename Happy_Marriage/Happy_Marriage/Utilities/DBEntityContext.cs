@@ -13,12 +13,17 @@ namespace Happy_Marriage.Utilities
         //public DbSet<User_Other_Info> Users_Other_Info { get; set; }
         //public DbSet<User_Messages> Users_Messages { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder) {
+        //to configure the database connection externally from program.cs and appsettings.json
+        public DBEntityContext(DbContextOptions<DBEntityContext> options) : base(options) { 
+        }
+
+        //to configure the database connection from here
+        /*protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder) {
             string constring = null;
             if (constring == null){
                 constring = @"server=127.0.0.1;uid=Jeremy;pwd=Jeremy;database=happy_marriage";
             }
             dbContextOptionsBuilder.UseMySQL(constring);
-        } 
+        } */
     }
 }

@@ -8,9 +8,9 @@ namespace Happy_Marriage.BusinessLogic
     // Manages both User and User_Info TABLES
     public class UserManager:IUserManager
     {
-        private DBEntityContext dBEntityContext;
-        public UserManager() {
-            dBEntityContext = new DBEntityContext();
+        private readonly DBEntityContext dBEntityContext;
+        public UserManager(DBEntityContext dBEntityContext) {
+            this.dBEntityContext = dBEntityContext;
         }
 
         public List<User> GetAll() { 
@@ -69,6 +69,12 @@ namespace Happy_Marriage.BusinessLogic
             dBEntityContext.SaveChanges();
 
             return user_r;
+        }
+
+        public User_Info GetUserInfo(int userid) {
+            var list = from user in dBEntityContext.Users_Info where user.UserId == userid select user;
+            User_Info userinfo = list.FirstOrDefault(u => u.UserId == userid);
+            return userinfo;
         }
     }
 }

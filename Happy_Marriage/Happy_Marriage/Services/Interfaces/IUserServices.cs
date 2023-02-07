@@ -14,5 +14,7 @@ namespace Happy_Marriage.Services.Interfaces
         public User GetUserByEmail(string email);
 
         public User_Register Register(User_Register user_r);
+
+        public User_Info GetUserInfo(int userid);
     }
 }

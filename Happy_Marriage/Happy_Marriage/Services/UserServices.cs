@@ -25,6 +25,9 @@ namespace Happy_Marriage.Services
 
         public User_Register Register(User_Register user_r) => _userManager.Register(user_r);
 
+        public User_Info GetUserInfo(int userid) => _userManager.GetUserInfo(userid);
+           
+
 
     }
 }

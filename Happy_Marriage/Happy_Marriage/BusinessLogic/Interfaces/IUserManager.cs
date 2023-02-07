@@ -13,5 +13,7 @@ namespace Happy_Marriage.BusinessLogic.Interfaces
         public User Update(User user);
         public User GetUserByEmail(string email);
         public User_Register Register(User_Register user_r);
+
+        public User_Info GetUserInfo(int userid);
     }
 }
