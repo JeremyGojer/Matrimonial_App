@@ -5,6 +5,10 @@
 
     User_Info userinfo = ViewData["userinfo"] as User_Info;
 
+    User_Personal_Info upi = ViewData["upi"] as User_Personal_Info;
+
+    List<User_Address_Info> listuai = ViewData["listuai"] as List<User_Address_Info>;
+
     string url = null;
 
 }
@@ -13,12 +17,14 @@
     <h1>About You</h1>
     @if (url == null)
     {
-        <img src="/images/Default_Profile_Pic.jpg" width=300 height=300/>
+        <img src=@user.ImageUrl width=300 height=300/>
     }
     else
     {
         <img src="" width=300 height=300 />
     }
+    <div>
+    <h3>Basic Info</h3>
     <table class="table table-hover">
         <tr><td>FirstName</td><td>@userinfo.FirstName</td></tr>
         <tr><td>LastName</td><td>@userinfo.LastName</td></tr>
@@ -26,5 +32,41 @@
         <tr><td>Gender</td><td>@userinfo.Gender</td></tr>
         <tr><td>Religion</td><td>@userinfo.Religion</td></tr>
     </table>
-
+    </div>
+    <hr />
+    <div>
+        <h3>Personal Info</h3>
+        @if (upi != null)
+        {
+            <table class="table table-hover">
+                <tr><td>Height</td><td>@upi.Height</td></tr>
+            <tr><td>Weight</td><td>@upi.Weight</td></tr>
+            <tr><td>Food Type</td><td>@upi.FoodType</td></tr>
+            <tr><td>Smoking</td><td>@upi.Smoking</td></tr>
+            <tr><td>Alcohol</td><td>@upi.Alcohol</td></tr>
+            <tr><td>Blood Group</td><td>@upi.BloodGroup</td></tr>
+            <tr><td>Martial Status</td><td>@upi.MartialStatus</td></tr>
+            <tr><td>Annual Income</td><td>@upi.AnnualIncome</td></tr>
+        </table>
+        }
+    </div>
+    <hr />
+    <div>
+        <h3>Address Info</h3>
+        @if (listuai != null)
+        {
+            <table class="table table-hover">
+            @foreach(User_Address_Info uai in listuai){
+            <tr><td>Country</td><td>@uai.Country</td></tr>
+            <tr><td>State</td><td>@uai.State</td></tr>
+            <tr><td>District</td><td>@uai.District</td></tr>
+            <tr><td>City</td><td>@uai.City</td></tr>
+            <tr><td>Pin Code</td><td>@uai.PinCode</td></tr>
+            <tr><td>Address Line 2</td><td>@uai.AddressLine2</td></tr>
+            <tr><td>Address Line 1</td><td>@uai.AddressLine1</td></tr>
+            }
+        </table>
+        }
+    </div>
+    <hr />
 </div>

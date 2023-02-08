@@ -1,5 +1,4 @@
 ﻿using Happy_Marriage.Models;
-using Happy_Marriage.Services;
 using Happy_Marriage.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -23,8 +22,12 @@ namespace Happy_Marriage.Controllers
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
             User_Info userinfo = _userServices.GetUserInfo(user.UserId);
+            User_Personal_Info upi = _userServices.GetPersonalInfo(user);
+            List<User_Address_Info> listuai = _userServices.GetAddressInfo(user);
             ViewData["user"] = user;
             ViewData["userinfo"] = userinfo;
+            ViewData["upi"] = upi;
+            ViewData["listuai"] = listuai;
             return View();
         }
 

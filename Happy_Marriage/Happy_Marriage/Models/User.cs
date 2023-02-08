@@ -15,6 +15,7 @@ namespace Happy_Marriage.Models
         public string? ContactNumber { get; set; }
         public string? Role { get; set; }
         public DateTime JoinedOn { get; set; }
+        public string? ImageUrl { get; set; }
 
     }
 }

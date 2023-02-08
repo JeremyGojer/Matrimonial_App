@@ -22,7 +22,7 @@ builder.Services.AddTransient<DBEntityContext>();
 builder.Services.AddDistributedMemoryCache();
 
 //Session management on server side
-builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromSeconds(10);
+builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromSeconds(300);
                                          options.Cookie.HttpOnly = true;
                                          options.Cookie.IsEssential= true;} );
 

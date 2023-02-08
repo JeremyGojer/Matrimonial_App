@@ -26,7 +26,20 @@ namespace Happy_Marriage.Services
         public User_Register Register(User_Register user_r) => _userManager.Register(user_r);
 
         public User_Info GetUserInfo(int userid) => _userManager.GetUserInfo(userid);
-           
+
+        public User_Personal_Info AddPersonalInfo(User user, User_Personal_Info info) => _userManager.AddPersonalInfo(user, info);
+
+        public User_Personal_Info GetPersonalInfo(User user) => _userManager.GetPersonalInfo(user);
+
+        public bool IsPersonalInfoPresent(User user) => _userManager.IsPersonalInfoPresent(user);
+
+        // Operation for User Address Info Table
+        public User_Address_Info AddAddressInfo(User user, User_Address_Info info) => _userManager.AddAddressInfo(user, info);
+
+        public List<User_Address_Info> GetAddressInfo(User user) => _userManager.GetAddressInfo(user);
+
+        public bool IsAddressPresent(User user) => _userManager.IsAddressPresent(user);
+
 
 
     }
