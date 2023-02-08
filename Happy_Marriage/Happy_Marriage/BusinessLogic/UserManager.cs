@@ -1,7 +1,9 @@
-﻿using Happy_Marriage.BusinessLogic.Interfaces;
+﻿using Google.Protobuf.WellKnownTypes;
+using Happy_Marriage.BusinessLogic.Interfaces;
 using Happy_Marriage.Models;
 using Happy_Marriage.Utilities;
 using Microsoft.CodeAnalysis.Elfie.Model.Tree;
+using Org.BouncyCastle.Asn1.Pkcs;
 using Org.BouncyCastle.Bcpg;
 using Org.BouncyCastle.Security;
 
@@ -66,6 +68,7 @@ namespace Happy_Marriage.BusinessLogic
                                                   Gender= user_r.Gender,
                                                   DateOfBirth=user_r.DateOfBirth,
                                                   Job=user_r.Job,
+                                                  Education=user_r.Education,
                                                   Religion=user_r.Religion
                                                 };
             //Insert data in Users_Info Table
@@ -152,5 +155,77 @@ namespace Happy_Marriage.BusinessLogic
 
             return status;
         }
+
+        // User Search Methods  ////////////////////////////////////////////////////////////
+
+        public List<User> SearchByAge(int min=18, int max=100)
+        {
+            DateTime mindate = DateTime.Now.AddYears(-min);
+            DateTime maxdate = DateTime.Now.AddYears(-max);
+            var list = from useri in dBEntityContext.Users_Info 
+                       join user in dBEntityContext.Users on
+                       useri.UserId equals user.UserId
+                       where (useri.DateOfBirth.CompareTo(mindate) + useri.DateOfBirth.CompareTo(maxdate) == 0)
+                       select user;
+            return list.ToList();
+        }
+
+        public List<User> SearchByGender(string gender) { 
+            var list = from useri in dBEntityContext.Users_Info
+                       join user in dBEntityContext.Users on
+                       useri.UserId equals user.UserId
+                       where (useri.Gender.Equals(gender))
+                       select user;
+
+            return list.ToList();
+        }
+
+        public List<User> SearchByEducation(string education) {
+            var list = from useri in dBEntityContext.Users_Info
+                       join user in dBEntityContext.Users on
+                       useri.UserId equals user.UserId
+                       where (useri.Education.Equals(education))
+                       select user;
+
+            return list.ToList();
+        }
+
+        public List<User> SearchByCity(string city) { 
+            var list = from useri in dBEntityContext.Users_Address_Info
+                       join user in dBEntityContext.Users on
+                       useri.UserId equals user.UserId
+                       where (useri.City.Equals(city))
+                       select user;
+
+            return list.ToList();
+        }
+
+        //  Takes join from three tables and returns a mini profile of users matching the same.
+        public List<Profile_Mini> SearchByAll(UserSearch search, User self) {
+            DateTime mindate = DateTime.Now.AddYears(-search.MinAge);
+            DateTime maxdate = DateTime.Now.AddYears(-search.MaxAge);
+
+            var list = from useri in dBEntityContext.Users_Info
+                       join user in dBEntityContext.Users
+                       on useri.UserId equals user.UserId
+                       join usera in dBEntityContext.Users_Address_Info
+                       on user.UserId equals usera.UserId
+                       where ((useri.Gender.Equals(search.Gender) || (search.Gender.Equals(null))) &&
+                       (usera.City.Equals(search.City) || (search.City.Equals(null))) &&
+                       (useri.Education.Equals(search.Education) || (search.Education.Equals(null))) &&
+                       (useri.DateOfBirth.CompareTo(mindate) + useri.DateOfBirth.CompareTo(maxdate) == 0) &&
+                       (user.UserId != self.UserId))
+                       select new Profile_Mini {UserId = user.UserId,
+                                                UserName = user.UserName,
+                                                ImageUrl = user.ImageUrl,
+                                                Job = useri.Job
+                                                };
+
+            return list.ToList();
+        }
+    
+    
     }
+
+    
 }

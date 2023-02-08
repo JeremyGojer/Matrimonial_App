@@ -1,53 +1,10 @@
-﻿@using Happy_Marriage.Models
-@using Happy_Marriage.Services
+﻿
 @{
-    User user = ViewData["user"] as User;
-
-    User_Info userinfo = ViewData["userinfo"] as User_Info;
-
-    string url = user.ImageUrl;
-
+    ViewData["Title"] = "Success";
 }
-<div class="container-fluid">
-    
-    <div class="row flex-nowrap">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark " style="width: 250px;">
-        @Html.Partial("Sidebar.cshtml")
-    </div>
-    
-    
-    <div class="col py-3">
-        <div class="text-center">
-
-            <h1>About You</h1>
-            @if (url == null)
-            {
-                <img src="/images/Default_Profile_Pic.jpg" width=300 height=300 />
-            }
-            else
-            {
-                <img src=@user.ImageUrl width=300 height=300 />
-            }
-            <div>
-            <h3>Basic Info</h3>
-            <table class="table table-hover">
-                <tr><td>FirstName</td><td>@userinfo.FirstName</td></tr>
-                <tr><td>LastName</td><td>@userinfo.LastName</td></tr>
-                <tr><td>Date of Birth</td><td>@userinfo.DateOfBirth</td></tr>
-                <tr><td>Gender</td><td>@userinfo.Gender</td></tr>
-                <tr><td>Religion</td><td>@userinfo.Religion</td></tr>
-            </table>
-            </div>
-            <hr />
-            <div>
-                @Html.Partial("PersonalInfo.cshtml")
-            </div>
-            <hr />
-            <div>
-                @Html.Partial("AddressInfo")
-            </div>
-            <hr />
-        </div>
-    </div>
-    </div>
+<div class="text-lg-center">
+    <h1>Success</h1>
+    @Html.Partial("Search")
 </div>
+
+

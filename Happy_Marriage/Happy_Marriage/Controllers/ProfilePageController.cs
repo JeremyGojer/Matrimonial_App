@@ -17,7 +17,7 @@ namespace Happy_Marriage.Controllers
             _userServices = userServices;
         }
 
-        public IActionResult Index()
+        public IActionResult MyProfile()
         {
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
@@ -28,6 +28,10 @@ namespace Happy_Marriage.Controllers
             ViewData["userinfo"] = userinfo;
             ViewData["upi"] = upi;
             ViewData["listuai"] = listuai;
+            return View();
+        }
+
+        public IActionResult Index() {
             return View();
         }
         
@@ -44,6 +48,21 @@ namespace Happy_Marriage.Controllers
             if (user == null) { return RedirectToAction("Login", "Auth"); }
             
             return PartialView();
+        }
+
+        [HttpPost]
+        public IActionResult Search(int minage=18, int maxage=100, string gender="default", string education="default", string city="default") {
+            UserSearch search = new UserSearch{ MinAge = minage,
+                                                MaxAge = maxage,
+                                                Gender = gender,
+                                                City = city,
+                                                Education= education
+            };
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            List<Profile_Mini> pmini = _userServices.SearchByAll(search, user);
+            ViewData["pmini"] = pmini;
+            return RedirectToAction("Index","ProfilePage");
         }
 
         

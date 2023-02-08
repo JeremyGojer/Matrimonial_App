@@ -31,7 +31,7 @@ namespace Happy_Marriage.Controllers
                 //Redirect to landing page
                 string jsonuser = JsonSerializer.Serialize(user);
                 HttpContext.Session.SetString("user",jsonuser);
-                return RedirectToAction("Success", "Home");
+                return RedirectToAction("Index", "ProfilePage");
             }
             //Back to login form
             ViewData["msg"] = "Incorrect credentials, please try again";
@@ -49,10 +49,10 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth,string job, string gender, string religion) {
+        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth,string job, string gender, string religion, string education) {
             User_Register user= new User_Register{UserName=username, Email=email, Password=password,
                         FirstName=firstname, LastName=lastname, ContactNumber=contactnumber, Job=job,
-                        Gender=gender, Religion=religion, DateOfBirth=dateofbirth
+                        Education=education ,Gender=gender, Religion=religion, DateOfBirth=dateofbirth
             };
             if (_userServices.GetUserByEmail(email) == null)
             {

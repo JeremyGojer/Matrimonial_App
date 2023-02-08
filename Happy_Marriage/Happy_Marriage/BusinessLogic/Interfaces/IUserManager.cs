@@ -19,5 +19,6 @@ namespace Happy_Marriage.BusinessLogic.Interfaces
         public User_Address_Info AddAddressInfo(User user, User_Address_Info info);
         public List<User_Address_Info> GetAddressInfo(User user);
         public bool IsAddressPresent(User user);
+        public List<Profile_Mini> SearchByAll(UserSearch search, User self);
     }
 }

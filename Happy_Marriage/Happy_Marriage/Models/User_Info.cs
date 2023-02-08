@@ -14,6 +14,7 @@ namespace Happy_Marriage.Models
         public string? Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string? Job { get; set; }
+        public string? Education { get; set; }
         public string? Religion { get; set; }
         
     }

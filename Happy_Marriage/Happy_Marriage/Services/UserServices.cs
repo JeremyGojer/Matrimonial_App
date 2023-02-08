@@ -40,7 +40,7 @@ namespace Happy_Marriage.Services
 
         public bool IsAddressPresent(User user) => _userManager.IsAddressPresent(user);
 
-
+        public List<Profile_Mini> SearchByAll(UserSearch search, User self) => _userManager.SearchByAll(search, self);
 
     }
 }

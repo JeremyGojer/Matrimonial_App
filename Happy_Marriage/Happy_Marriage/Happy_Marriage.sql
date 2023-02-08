@@ -7,8 +7,8 @@ CREATE TABLE users(userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(50), ema
 INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Jeremy","gojerjeremy@gmail.com","Jeremy","+917019294131","admin","2021-01-01","/images/Default_Profile_Pic.jpg");
 
 DROP TABLE IF EXISTS users_info;
-CREATE TABLE users_info(userid INT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50), gender VARCHAR(20), dateofbirth DATE, job VARCHAR(50), religion VARCHAR(30), PRIMARY KEY(userid));
-INSERT INTO users_info values(1,"Jeremy","Gojer","Male","1996-02-25","Freelancer","Christian");
+CREATE TABLE users_info(userid INT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50), gender VARCHAR(20), dateofbirth DATE, job VARCHAR(50),education VARCHAR(50), religion VARCHAR(30), PRIMARY KEY(userid));
+INSERT INTO users_info values(1,"Jeremy","Gojer","Male","1996-02-25","Freelancer","Graduate","Christian");
 
 DROP TABLE IF EXISTS users_personal_info;
 CREATE TABLE users_personal_info(userid INT NOT NULL, height DOUBLE, weight DOUBLE, foodtype VARCHAR(40), smoking VARCHAR(20), alcohol VARCHAR(20), bloodgroup VARCHAR(10), martialstatus VARCHAR(40), annualincome DOUBLE, PRIMARY KEY(userid));
