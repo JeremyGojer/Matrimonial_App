@@ -30,6 +30,21 @@ namespace Happy_Marriage.Controllers
             ViewData["listuai"] = listuai;
             return View();
         }
+        
+        public IActionResult PersonalInfo()
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            
+            return PartialView();
+        }
+        public IActionResult AddressInfo()
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            
+            return PartialView();
+        }
 
         
 

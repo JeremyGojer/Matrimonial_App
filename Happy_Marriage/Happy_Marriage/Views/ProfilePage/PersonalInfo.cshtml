@@ -1,0 +1,24 @@
+﻿@using Happy_Marriage.Models
+@using Happy_Marriage.Services
+@{
+
+    User_Personal_Info upi = ViewData["upi"] as User_Personal_Info;
+}  
+    
+<h3>Personal Info</h3>
+@if (upi != null)
+{
+    <table class="table table-hover">
+        <tr><td>Height</td><td>@upi.Height</td></tr>
+        <tr><td>Weight</td><td>@upi.Weight</td></tr>
+        <tr><td>Food Type</td><td>@upi.FoodType</td></tr>
+        <tr><td>Smoking</td><td>@upi.Smoking</td></tr>
+        <tr><td>Alcohol</td><td>@upi.Alcohol</td></tr>
+        <tr><td>Blood Group</td><td>@upi.BloodGroup</td></tr>
+        <tr><td>Martial Status</td><td>@upi.MartialStatus</td></tr>
+        <tr><td>Annual Income</td><td>@upi.AnnualIncome</td></tr>
+    </table>
+}
+    
+   
+
