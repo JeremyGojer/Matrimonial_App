@@ -27,6 +27,13 @@ namespace Happy_Marriage.BusinessLogic
             return status;
         }
 
+        public List<User_Upload> AllUserImagesUrl(User user) {
+            var list = from userimgs in dBEntityContext.Users_Uploads where (userimgs.UserId == user.UserId) select userimgs;
+            
+
+            return list.ToList();
+        }
+
     
     }
 

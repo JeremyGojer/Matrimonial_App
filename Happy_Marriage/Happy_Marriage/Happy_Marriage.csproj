@@ -22,7 +22,6 @@
   <ItemGroup>
 	<Folder Include="Utilities\" />
 	<Folder Include="wwwroot\images\" />
-	<Folder Include="wwwroot\User_Uploads\" />
   </ItemGroup>
 
 </Project>

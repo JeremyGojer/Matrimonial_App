@@ -73,7 +73,10 @@ namespace Happy_Marriage.Controllers
 
         public IActionResult MyUploads()
         {
-
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            List<User_Upload> imglist = _fileServices.AllUserImagesUrl(user);
+            ViewData["imglist"] = imglist;
             return View();
         }
         [HttpPost]
@@ -89,19 +92,26 @@ namespace Happy_Marriage.Controllers
                     string folder = "wwwroot/User_Uploads/";
                     
                     //set file name here < UserName + Random Identifier + ActualFileName
-                    folder += user.UserName + Guid.NewGuid().ToString() + uploaderModel.File.FileName;
+                    folder += user.UserName + Guid.NewGuid().ToString() + ".jpg";
 
                     uploaderModel.File.CopyTo(new FileStream(folder, FileMode.Create));
                     //Add the entry of image added to the database with its url
                     _fileServices.Upload(new User_Upload {UserId = user.UserId,
-                                                          ImageUrl = folder,
+                                                          ImageUrl = folder.Substring(7),
                                                           ReceivedOn= DateTime.Now,
                                                           });
                     ViewData["msg"] = "Photo added sucessfully";
-                    return View();
+                    return RedirectToAction("Index", "ProfilePage");
                 }
             }
             ViewData["msg"] = "Something went wrong, Please check your photo";
+            
+
+            return View();
+        }
+
+        public IActionResult AllImages() {
+            
             return View();
         }
 

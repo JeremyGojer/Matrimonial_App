@@ -14,8 +14,10 @@ namespace Happy_Marriage.Services
         }
 
         public bool Upload(User_Upload file) => _fileManager.Upload(file);
+        public List<User_Upload> AllUserImagesUrl(User user) => _fileManager.AllUserImagesUrl(user);
 
-        
+
+
 
     }
 }

@@ -1,6 +1,8 @@
 ﻿@model UploaderModel
 @{
     string msg = ViewData["msg"] as string;
+    List<User_Upload> imglist = ViewData["imglist"] as List<User_Upload>;
+    
 }
 <div class="row">
     <div class="text-center">
@@ -18,4 +20,20 @@
             
         }
     </div>
+</div>
+<hr/>
+<div class="row">
+    @if (imglist != null)
+    {
+        foreach (var img in imglist)
+        {
+            <div class="col-sm-auto p-4">
+                    <a href="#"><img src=@img.ImageUrl height=150/></a>
+            </div>  
+        }
+    }
+    else
+    {
+        <h3>No Images Yet</h3>
+    }
 </div>

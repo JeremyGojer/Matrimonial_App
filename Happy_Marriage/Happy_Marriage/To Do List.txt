@@ -8,3 +8,5 @@ Make Pages for
 	Enter User Education Details and change
 
 Implement Messages and Profile Alert
+
+Add delete and set as profile picture for uploads.
