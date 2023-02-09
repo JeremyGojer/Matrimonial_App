@@ -23,3 +23,6 @@ CREATE TABLE users_other_info(id INT NOT NULL AUTO_INCREMENT, userid INT NOT NUL
 
 DROP TABLE IF EXISTS users_messages;
 CREATE TABLE users_messages(messageid INT NOT NULL AUTO_INCREMENT, userid INT, receivedon DATETIME, content VARCHAR(300), status VARCHAR(30), PRIMARY KEY(messageid));
+
+DROP TABLE IF EXISTS users_uploads;
+CREATE TABLE users_uploads(id INT NOT NULL AUTO_INCREMENT, userid INT, imageurl TEXT, receivedon DATETIME, PRIMARY KEY(id));

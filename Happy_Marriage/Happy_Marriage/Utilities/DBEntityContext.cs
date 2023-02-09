@@ -13,6 +13,9 @@ namespace Happy_Marriage.Utilities
         //public DbSet<User_Other_Info> Users_Other_Info { get; set; }
         //public DbSet<User_Messages> Users_Messages { get; set; }
 
+        //Deals with file local url and not the actual file
+        public DbSet<User_Upload> Users_Uploads { get; set; }
+
         //to configure the database connection externally from program.cs and appsettings.json
         public DBEntityContext(DbContextOptions<DBEntityContext> options) : base(options) { 
         }

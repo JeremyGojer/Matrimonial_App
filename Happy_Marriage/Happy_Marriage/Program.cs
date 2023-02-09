@@ -17,6 +17,8 @@ builder.Services.AddDbContext<DBEntityContext>(options => { options.UseMySQL(con
 builder.Services.AddTransient<IUserManager,UserManager>();
 builder.Services.AddTransient<IUserServices,UserServices>();
 builder.Services.AddTransient<DBEntityContext>();
+builder.Services.AddTransient<IFileManager, FileManager>();
+builder.Services.AddTransient<IFileServices, FileServices>();
 
 //Add where the session will be stored
 builder.Services.AddDistributedMemoryCache();
