@@ -10,6 +10,7 @@ namespace Happy_Marriage.Models
     {
         public int UserId { get; set; }
         public string? UserName { get; set; }
+        public int Age { get; set; }
         public string? ImageUrl { get; set; }
         public string? Job { get; set; }
 

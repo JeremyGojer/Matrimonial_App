@@ -1,0 +1,34 @@
+﻿@model Profile_Mini
+@using System.Text.Json
+@{
+    ViewData["Title"] = "Success";
+    List<Profile_Mini> pmini = null;
+    if (TempData["pmini"] != null)
+    {
+        pmini = JsonSerializer.Deserialize<List<Profile_Mini>>(TempData["pmini"].ToString());
+    }
+    
+}
+@if (pmini != null)
+{
+    if (pmini.Count > 0)
+    {
+        foreach(Profile_Mini pmin in pmini)
+        {
+               <div class="row">
+                   <div class="col"><img src=@pmin.ImageUrl height=100/></div>
+                    <div class="col">
+                        <h4>@pmin.UserName (@pmin.Age)</h4>
+                        <h3>@pmin.Job</h3>
+                    </div>
+               </div> 
+        }
+    }
+    else
+    {
+        <h2>No Match Found</h2>    
+    }
+}
+
+
+

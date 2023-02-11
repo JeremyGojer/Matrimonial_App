@@ -2,6 +2,7 @@
 using Happy_Marriage.BusinessLogic.Interfaces;
 using Happy_Marriage.Models;
 using Happy_Marriage.Utilities;
+using Happy_Marriage.Utilities.Interfaces;
 using Microsoft.CodeAnalysis.Elfie.Model.Tree;
 using Org.BouncyCastle.Asn1.Pkcs;
 using Org.BouncyCastle.Bcpg;
@@ -13,8 +14,11 @@ namespace Happy_Marriage.BusinessLogic
     public class UserManager:IUserManager
     {
         private readonly DBEntityContext dBEntityContext;
-        public UserManager(DBEntityContext dBEntityContext) {
+        
+        public UserManager(DBEntityContext dBEntityContext)
+        {
             this.dBEntityContext = dBEntityContext;
+            
         }
 
         public List<User> GetAll() { 
@@ -158,73 +162,50 @@ namespace Happy_Marriage.BusinessLogic
 
         // User Search Methods  ////////////////////////////////////////////////////////////
 
-        public List<User> SearchByAge(int min=18, int max=100)
-        {
-            DateTime mindate = DateTime.Now.AddYears(-min);
-            DateTime maxdate = DateTime.Now.AddYears(-max);
-            var list = from useri in dBEntityContext.Users_Info 
-                       join user in dBEntityContext.Users on
-                       useri.UserId equals user.UserId
-                       where (useri.DateOfBirth.CompareTo(mindate) + useri.DateOfBirth.CompareTo(maxdate) == 0)
-                       select user;
-            return list.ToList();
-        }
-
-        public List<User> SearchByGender(string gender) { 
-            var list = from useri in dBEntityContext.Users_Info
-                       join user in dBEntityContext.Users on
-                       useri.UserId equals user.UserId
-                       where (useri.Gender.Equals(gender))
-                       select user;
-
-            return list.ToList();
-        }
-
-        public List<User> SearchByEducation(string education) {
-            var list = from useri in dBEntityContext.Users_Info
-                       join user in dBEntityContext.Users on
-                       useri.UserId equals user.UserId
-                       where (useri.Education.Equals(education))
-                       select user;
-
-            return list.ToList();
-        }
-
-        public List<User> SearchByCity(string city) { 
-            var list = from useri in dBEntityContext.Users_Address_Info
-                       join user in dBEntityContext.Users on
-                       useri.UserId equals user.UserId
-                       where (useri.City.Equals(city))
-                       select user;
-
-            return list.ToList();
-        }
-
         //  Takes join from three tables and returns a mini profile of users matching the same.
         public List<Profile_Mini> SearchByAll(UserSearch search, User self) {
             DateTime mindate = DateTime.Now.AddYears(-search.MinAge);
             DateTime maxdate = DateTime.Now.AddYears(-search.MaxAge);
-
+            // if all then returns all the entries belonging to the category
             var list = from useri in dBEntityContext.Users_Info
                        join user in dBEntityContext.Users
                        on useri.UserId equals user.UserId
                        join usera in dBEntityContext.Users_Address_Info
                        on user.UserId equals usera.UserId
-                       where ((useri.Gender.Equals(search.Gender) || (search.Gender.Equals(null))) &&
-                       (usera.City.Equals(search.City) || (search.City.Equals(null))) &&
-                       (useri.Education.Equals(search.Education) || (search.Education.Equals(null))) &&
-                       (useri.DateOfBirth.CompareTo(mindate) + useri.DateOfBirth.CompareTo(maxdate) == 0) &&
-                       (user.UserId != self.UserId))
+                       where (useri.DateOfBirth.CompareTo(mindate) + useri.DateOfBirth.CompareTo(maxdate) == 0)  &&
+                             (useri.Gender.Equals(search.Gender)) &&
+                             (useri.Education.Equals(search.Education)) &&
+                             (usera.District.Equals(search.City))
                        select new Profile_Mini {UserId = user.UserId,
                                                 UserName = user.UserName,
+                                                Age = FindAgeFromDateTime(useri.DateOfBirth),
                                                 ImageUrl = user.ImageUrl,
                                                 Job = useri.Job
                                                 };
-
+            
             return list.ToList();
         }
-    
-    
+
+        public static int FindAgeFromDateTime(DateTime dob)
+        {
+            DateTime today = DateTime.Now;
+            int age = 0;
+            if (today.Month > dob.Month)
+            {
+                age = today.Year - dob.Year;
+            }
+            else if (today.Month == dob.Month && today.Day > dob.Day)
+            {
+                age = today.Year - dob.Year;
+            }
+            else
+            {
+                age = today.Year - dob.Year - 1;
+            }
+
+            return age;
+        }
+
     }
 
     

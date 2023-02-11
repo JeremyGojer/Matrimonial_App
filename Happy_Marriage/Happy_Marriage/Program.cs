@@ -4,6 +4,7 @@ using Happy_Marriage.BusinessLogic.Interfaces;
 using Happy_Marriage.Services;
 using Happy_Marriage.Services.Interfaces;
 using Happy_Marriage.Utilities;
+using Happy_Marriage.Utilities.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,11 +15,12 @@ builder.Services.AddDbContext<DBEntityContext>(options => { options.UseMySQL(con
 
 
 //Services Injection
-builder.Services.AddTransient<IUserManager,UserManager>();
-builder.Services.AddTransient<IUserServices,UserServices>();
 builder.Services.AddTransient<DBEntityContext>();
+builder.Services.AddTransient<IUserManager, UserManager>();
+builder.Services.AddTransient<IUserServices, UserServices>();
 builder.Services.AddTransient<IFileManager, FileManager>();
 builder.Services.AddTransient<IFileServices, FileServices>();
+
 
 //Add where the session will be stored
 builder.Services.AddDistributedMemoryCache();

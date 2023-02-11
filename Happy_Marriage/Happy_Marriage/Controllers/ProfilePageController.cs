@@ -35,6 +35,8 @@ namespace Happy_Marriage.Controllers
 
         public IActionResult Index()
         {
+            List<Profile_Mini> pmini = TempData["pmini"] as List<Profile_Mini>;
+            ViewData["pmini"] = pmini;
             return View();
         }
 
@@ -53,8 +55,12 @@ namespace Happy_Marriage.Controllers
             return PartialView();
         }
 
+        public IActionResult Search() {
+            return View();
+        }
+
         [HttpPost]
-        public IActionResult Search(int minage = 18, int maxage = 100, string gender = "default", string education = "default", string city = "default")
+        public IActionResult Search(int minage = 18, int maxage = 100, string gender = "default", string education = "All", string city = "All")
         {
             UserSearch search = new UserSearch
             {
@@ -67,8 +73,14 @@ namespace Happy_Marriage.Controllers
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
             List<Profile_Mini> pmini = _userServices.SearchByAll(search, user);
-            ViewData["pmini"] = pmini;
+            TempData["pmini"] =  JsonSerializer.Serialize(pmini);
             return RedirectToAction("Index", "ProfilePage");
+        }
+
+        public IActionResult SearchResult()
+        {
+            TempData.Keep("pmini");
+            return View();
         }
 
         public IActionResult MyUploads()
@@ -110,10 +122,8 @@ namespace Happy_Marriage.Controllers
             return View();
         }
 
-        public IActionResult AllImages() {
-            
-            return View();
-        }
+        
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

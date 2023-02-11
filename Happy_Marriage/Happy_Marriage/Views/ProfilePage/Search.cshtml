@@ -1,8 +1,5 @@
 ﻿@using Happy_Marriage.Models
-@{
-    ViewData["Title"] = "Success";
-    List<Profile_Mini> list = ViewData["pmini"] as List<Profile_Mini>;
-}
+
 <h3>Search</h3>
 <form method="post" action="/ProfilePage/Search" class="form-control">
     <div class="row">
@@ -44,17 +41,16 @@
         <div class="col">
             <label for="education">Select Education</label>
             <select id="education" name="education" class="form-control">
-                <option value="Not Educated">Not Educated</option>
+                <option value="Non Matric">Not Educated</option>
                 <option value="Matric">Matric</option>
                 <option value="Undergraduate">Undergraduate</option>
                 <option value="Graduate">Graduate</option>
                 <option value="Post-Graduate or Higher">Post-Graduate or Higher</option>
-                <option value="Other">Other</option>
             </select>
         </div>
 
         <div class="col">
-            <label for="city">Enter city</label>
+            <label for="city">Enter Region</label>
             <input type="text" class="form-control" id="city" name="city" />
         </div>
 
@@ -64,24 +60,5 @@
 
     </div>
 </form>
-@if (list != null)
-{
-    <ul>
-        @foreach(Profile_Mini pm in list){
-        <li>
-            <div class="row">
-                <img src=@pm.ImageUrl width="60" height="60"/>
-            </div>
-            <div class="row">
-                <div class="col">
-                    User Name : @pm.UserName
-                </div>
-                <div class="col">
-                     : @pm.Job
-                </div>
-            </div>
-        </li>
-        }
-    </ul>
-}
+
 
