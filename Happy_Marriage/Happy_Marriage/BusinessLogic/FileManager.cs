@@ -34,6 +34,29 @@ namespace Happy_Marriage.BusinessLogic
             return list.ToList();
         }
 
+        public bool SetAsProfilePicture(string url, User user) {
+
+            bool status = false;
+            Console.WriteLine(user.ImageUrl);
+            Console.WriteLine(url);
+            user.ImageUrl= url;
+            //Update in database
+            dBEntityContext.Users.Update(user);
+            dBEntityContext.SaveChanges();
+
+            status = true;
+            return status;
+
+        }
+
+        public bool SetAsCoverPicture(string url, User user)
+        {
+            //this hasnt been implemented yet
+            bool status = false;
+            user.ImageUrl = url;
+            status = true;
+            return status;
+        }
     
     }
 

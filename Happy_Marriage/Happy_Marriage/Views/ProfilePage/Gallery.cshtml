@@ -1,0 +1,23 @@
+﻿@using System.Text.Json
+@{
+    List<User_Upload> imglist = null;
+    if (TempData["imglist"] != null)
+    {
+        imglist = JsonSerializer.Deserialize<List<User_Upload>>(TempData["imglist"].ToString());
+    }
+}
+<div class="row">
+    @if (imglist != null)
+    {
+        foreach (var img in imglist)
+        {
+            <div class="col-sm-auto p-4">
+                <a href="/ProfilePage/ImageDetails/?img=@img.ImageUrl"><img src=@img.ImageUrl height=150 /></a>
+            </div>
+        }
+    }
+    else
+    {
+        <h3>No Images Yet</h3>
+    }
+</div>

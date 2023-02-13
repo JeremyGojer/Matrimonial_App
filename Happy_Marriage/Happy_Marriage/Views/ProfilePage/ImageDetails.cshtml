@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string imgurl = ViewData["imgurl"] as string;
+}
+<div>
+    <img src=@imgurl />
+</div>
+<div>
+    <form>
+        <input type="hidden" value=@imgurl id="imgurl" name="imgurl">
+        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" formaction="/ProfilePage/SetAsProfilePhoto" formmethod="post">Set As Profile Picture</button>
+        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" formaction="/ProfilePage/SetAsCoverPhoto" formmethod="post">Set As Cover Picture</button>
+        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" formaction="/ProfilePage/DeleteFromUploads" formmethod="post">Delete Picture</button>
+        <button type="button" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" href="/ProfliePage/MyUploads">Go Back</button>
+    </form>
+</div>

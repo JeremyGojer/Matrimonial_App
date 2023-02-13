@@ -58,7 +58,7 @@ namespace Happy_Marriage.BusinessLogic
                                    Password = user_r.Password,
                                    ContactNumber = user_r.ContactNumber,
                                    Role = "user",
-                                   JoinedOn = new DateTime(),
+                                   JoinedOn = DateTime.Now,
                                    ImageUrl = "/images/Default_Profile_Pic.jpg"
             };
             //Insert data in Users table
@@ -206,6 +206,7 @@ namespace Happy_Marriage.BusinessLogic
             return age;
         }
 
+        
     }
 
     

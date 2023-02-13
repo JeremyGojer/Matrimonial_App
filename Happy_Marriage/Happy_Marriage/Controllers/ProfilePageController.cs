@@ -103,7 +103,7 @@ namespace Happy_Marriage.Controllers
                     //set folder here
                     string folder = "wwwroot/User_Uploads/";
                     
-                    //set file name here < UserName + Random Identifier + ActualFileName
+                    //set file name here < UserName + Random Identifier + Extension(.jpg)
                     folder += user.UserName + Guid.NewGuid().ToString() + ".jpg";
 
                     uploaderModel.File.CopyTo(new FileStream(folder, FileMode.Create));
@@ -113,7 +113,9 @@ namespace Happy_Marriage.Controllers
                                                           ReceivedOn= DateTime.Now,
                                                           });
                     ViewData["msg"] = "Photo added sucessfully";
-                    return RedirectToAction("Index", "ProfilePage");
+
+                    //return RedirectToAction("Index", "ProfilePage");
+                    return View();
                 }
             }
             ViewData["msg"] = "Something went wrong, Please check your photo";
@@ -122,8 +124,46 @@ namespace Happy_Marriage.Controllers
             return View();
         }
 
-        
-        
+        public IActionResult Gallery()
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            List<User_Upload> imglist = _fileServices.AllUserImagesUrl(user);
+            TempData["imglist"] = JsonSerializer.Serialize(imglist);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SetAsProfilePhoto(string imgurl) 
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            _fileServices.SetAsProfilePicture(imgurl,user);
+            return RedirectToAction("Index","ProfilePage");
+        }
+        [HttpGet]
+        public IActionResult ImageDetails([FromQuery(Name ="img")] string imgurl) {
+            //Also change the user profile pic in session
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            user.ImageUrl = imgurl;
+            HttpContext.Session.SetString("user", JsonSerializer.Serialize(user));
+            ViewData["imgurl"] = imgurl;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SetAsCoverPhoto(string imgurl)
+        {
+            //Yet to be implemented
+            return RedirectToAction("Index", "ProfilePage");
+        }
+        [HttpPost]
+        public IActionResult DeleteFromUploads(string imgurl)
+        {
+            //Yet to be Implemented
+            return RedirectToAction("Index", "ProfilePage");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
