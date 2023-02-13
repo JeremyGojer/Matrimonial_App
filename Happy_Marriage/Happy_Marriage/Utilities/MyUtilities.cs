@@ -1,11 +1,12 @@
 ﻿using Happy_Marriage.Models;
+using Happy_Marriage.Utilities.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Asn1.Mozilla;
 using System.Data.Odbc;
 
 namespace Happy_Marriage.Utilities
 {
-    public class MyUtiltities
+    public class MyUtiltities:IUtilities
     {
 
 

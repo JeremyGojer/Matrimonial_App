@@ -20,6 +20,8 @@ builder.Services.AddTransient<IUserManager, UserManager>();
 builder.Services.AddTransient<IUserServices, UserServices>();
 builder.Services.AddTransient<IFileManager, FileManager>();
 builder.Services.AddTransient<IFileServices, FileServices>();
+builder.Services.AddTransient<IRelationshipManager, RelationshipManager>();
+builder.Services.AddTransient<IRelationshipServices, RelationshipServices>();
 
 
 //Add where the session will be stored

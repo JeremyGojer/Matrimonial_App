@@ -1,0 +1,63 @@
+﻿@model Profile_Mini
+@{
+    List<Profile_Mini> receivedrequests = ViewData["receivedrequests"] as List<Profile_Mini>;
+    List<Profile_Mini> sentrequests = ViewData["sentrequests"] as List<Profile_Mini>;
+}
+<div>
+    @if (receivedrequests == null)
+    {
+        <h1>No Imcoming Requests</h1>
+    }
+    else
+    {
+        foreach (Profile_Mini pmin in receivedrequests)
+        {
+            <div class="row">
+                <form>
+                    <div class="col">
+                        <img src=@pmin.ImageUrl width=100 />
+                    </div>
+                    <div class="col">
+                        @pmin.UserName (@pmin.Age)
+                        @pmin.Job
+                    </div>
+                    <div class="col">
+                        <input type="hidden" value=@pmin.UserId id="userid" name="userid"/>
+                        <button formaction="/ProfilePage/AcceptRequest/" formmethod="post">Accept Request</button>
+                        <button formaction="/ProfilePage/DeclineRequest/" formmethod="post">Decline Request</button>
+                    </div>
+                </form>
+            </div>
+        }
+    }
+</div>
+<hr/>
+<div>
+    @if (sentrequests == null)
+    {
+        <h1>No Pending Requests</h1>
+    }
+    else
+    {
+        @foreach (Profile_Mini pmin in sentrequests)
+        {
+            <div class="row">
+                <form>
+                    <div class="col">
+                        <img src=@pmin.ImageUrl width=100 />
+                    </div>
+                    <div class="col">
+                        @pmin.UserName (@pmin.Age)
+                        @pmin.Job
+                    </div>
+                    <div class="col">
+                        <input type="hidden" value=@pmin.UserId id="userid" name="userid" />
+                        <button formaction="/ProfilePage/CancelRequest/" formmethod="post">Cancel Request</button>
+
+                    </div>
+                </form>
+            </div>
+
+        }
+    }  
+</div>

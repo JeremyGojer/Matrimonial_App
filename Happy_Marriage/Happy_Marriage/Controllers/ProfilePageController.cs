@@ -11,12 +11,14 @@ namespace Happy_Marriage.Controllers
         private readonly ILogger<ProfilePageController> _logger;
         private readonly IUserServices _userServices;
         private readonly IFileServices _fileServices;
+        private readonly IRelationshipServices _relationships;
 
-        public ProfilePageController(ILogger<ProfilePageController> logger, IUserServices userServices, IFileServices fileServices)
+        public ProfilePageController(ILogger<ProfilePageController> logger, IUserServices userServices, IFileServices fileServices, IRelationshipServices relationship)
         {
             _logger = logger;
             _userServices = userServices;
             _fileServices = fileServices;
+            _relationships = relationship;
         }
 
         public IActionResult MyProfile()
@@ -55,7 +57,7 @@ namespace Happy_Marriage.Controllers
             return PartialView();
         }
 
-        //Code for search section
+        //Code for search section /////////////////////////////////////////////////////////////////////////////////////////
 
         public IActionResult Search() {
             return View();
@@ -96,8 +98,54 @@ namespace Happy_Marriage.Controllers
             ViewData["listuai"] = listuai;
             return View();
         }
+        [HttpPost]
+        public IActionResult SendRequest(int userid) {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            _relationships.SendRequest(user.UserId,userid);
+            return RedirectToAction("Index","ProfilePage");
+        }
+        //Code for requests and relations section //////////////////////////////////////////////////////////
 
-        //Code for uploads section
+        public IActionResult MyRequests()
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            //Get All requests related to this user
+            ViewData["receivedrequests"] =  _relationships.AllReceivedRequests(user);
+            ViewData["sentrequests"] = _relationships.AllSentRequests(user);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AcceptRequest(int userid) 
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            //Session user is the receiver here
+            _relationships.AcceptRequest(userid, user.UserId);
+            return RedirectToAction("MyRequests", "ProfilePage");
+        }
+        [HttpPost]
+        public IActionResult DeclineRequest(int userid)
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            //Session user is the receiver here
+            _relationships.RejectRequest(userid, user.UserId);
+            return RedirectToAction("MyRequests", "ProfilePage");
+        }
+        [HttpPost]
+        public IActionResult CancelRequest(int userid)
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            //Session user is the sender here
+            _relationships.CancelRequest(user.UserId,userid);
+            return RedirectToAction("MyRequests", "ProfilePage");
+        }
+
+
+        //Code for uploads section /////////////////////////////////////////////////////////////////////////
 
         public IActionResult MyUploads()
         {

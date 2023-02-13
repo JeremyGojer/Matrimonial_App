@@ -62,3 +62,9 @@ CREATE TABLE users_messages(messageid INT NOT NULL AUTO_INCREMENT, userid INT, r
 
 DROP TABLE IF EXISTS users_uploads;
 CREATE TABLE users_uploads(id INT NOT NULL AUTO_INCREMENT, userid INT, imageurl TEXT, receivedon DATETIME, PRIMARY KEY(id));
+
+DROP TABLE IF EXISTS users_requests;
+CREATE TABLE users_requests(id INT NOT NULL AUTO_INCREMENT, userid1 INT, userid2 INT, createdon DATETIME, PRIMARY KEY(id));
+
+DROP TABLE IF EXISTS users_friendships;
+CREATE TABLE users_friendships(id INT NOT NULL AUTO_INCREMENT, userid1 INT, userid2 INT, createdon DATETIME, PRIMARY KEY(id));
