@@ -16,11 +16,18 @@
         foreach(Profile_Mini pmin in pmini)
         {
                <div class="row">
-                   <div class="col"><img src=@pmin.ImageUrl height=100/></div>
-                    <div class="col">
-                        <h4>@pmin.UserName (@pmin.Age)</h4>
-                        <h3>@pmin.Job</h3>
-                    </div>
+                   <form>
+                       <div class="col"><img src=@pmin.ImageUrl height=100/></div>
+                        <div class="col">
+                            <h4>@pmin.UserName (@pmin.Age)</h4>
+                            <h3>@pmin.Job</h3>
+                            <input type="hidden" value=@pmin.UserId id="userid" name="userid">
+                            <div class="col">
+                                <button formaction="/ProfilePage/OthersProfile/" formmethod="post">Visit Profile</button>
+                                <button formaction="/ProfilePage/SendRequest/" formmethod="post">Send Request</button>
+                            </div>
+                        </div>
+                   </form>
                </div> 
         }
     }

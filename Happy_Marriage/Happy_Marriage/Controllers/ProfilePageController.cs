@@ -55,6 +55,8 @@ namespace Happy_Marriage.Controllers
             return PartialView();
         }
 
+        //Code for search section
+
         public IActionResult Search() {
             return View();
         }
@@ -82,6 +84,20 @@ namespace Happy_Marriage.Controllers
             TempData.Keep("pmini");
             return View();
         }
+        [HttpPost]
+        public IActionResult OthersProfile(int userid) {
+            User user = _userServices.GetUserByUserId(userid);
+            User_Info userinfo = _userServices.GetUserInfo(user.UserId);
+            User_Personal_Info upi = _userServices.GetPersonalInfo(user);
+            List<User_Address_Info> listuai = _userServices.GetAddressInfo(user);
+            ViewData["user"] = user;
+            ViewData["userinfo"] = userinfo;
+            ViewData["upi"] = upi;
+            ViewData["listuai"] = listuai;
+            return View();
+        }
+
+        //Code for uploads section
 
         public IActionResult MyUploads()
         {

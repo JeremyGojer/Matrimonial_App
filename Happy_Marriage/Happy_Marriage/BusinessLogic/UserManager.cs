@@ -51,6 +51,12 @@ namespace Happy_Marriage.BusinessLogic
             return user;
         }
 
+        public User GetUserByUserId(int userid) {
+            var list = from users in dBEntityContext.Users where users.UserId == userid select users;
+            User user = list.FirstOrDefault(u => u.UserId == userid);
+            return user;
+        }
+
         public User_Register Register(User_Register user_r) {
             User user = new User { 
                                    UserName = user_r.UserName,

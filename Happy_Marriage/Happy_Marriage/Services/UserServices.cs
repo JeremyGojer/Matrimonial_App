@@ -22,6 +22,7 @@ namespace Happy_Marriage.Services
         public User Update(User user) => _userManager.Update(user);
 
         public User GetUserByEmail(string email) => _userManager.GetUserByEmail(email);
+        public User GetUserByUserId(int userid) => _userManager.GetUserByUserId(userid);
 
         public User_Register Register(User_Register user_r) => _userManager.Register(user_r);
 

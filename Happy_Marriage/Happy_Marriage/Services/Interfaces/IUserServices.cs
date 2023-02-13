@@ -9,6 +9,7 @@ namespace Happy_Marriage.Services.Interfaces
         public User Delete(User user);
         public User Update(User user);
         public User GetUserByEmail(string email);
+        public User GetUserByUserId(int userid);
         public User_Register Register(User_Register user_r);
         public User_Info GetUserInfo(int userid);
         public User_Personal_Info AddPersonalInfo(User user, User_Personal_Info info);
