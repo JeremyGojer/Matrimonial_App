@@ -16,6 +16,7 @@ namespace Happy_Marriage.Utilities
         //Deals with file local url and not the actual file
         public DbSet<User_Upload> Users_Uploads { get; set; }
         public DbSet<User_Request> Users_Requests { get; set; }
+        public DbSet<User_Connections> Users_Friendships { get; set; }
 
         //to configure the database connection externally from program.cs and appsettings.json
         public DBEntityContext(DbContextOptions<DBEntityContext> options) : base(options) { 

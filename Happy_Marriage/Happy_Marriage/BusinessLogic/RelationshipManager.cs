@@ -15,7 +15,7 @@ namespace Happy_Marriage.BusinessLogic
         public RelationshipManager(DBEntityContext dBEntityContext) {
             this.dBEntityContext = dBEntityContext;
         }
-
+        // All logic related to sending, receiving and deleting requests is here
         public bool SendRequest(int userid1, int userid2) {
             bool status = false;
             User_Request user_request = new User_Request { UserId1 = userid1,
@@ -31,13 +31,15 @@ namespace Happy_Marriage.BusinessLogic
         public User_Request GetUserRequest(int userid1, int userid2)
         {
             var ur = from userr in dBEntityContext.Users_Requests where (userr.UserId1== userid1) select userr;
-            User_Request urr = ur.FirstOrDefault(u => u.UserId2 == userid2);
+            User_Request urr = ur.FirstOrDefault(u =>  u.UserId2 == userid2);
             return urr;
         }
 
         public bool AcceptRequest(int userid1, int userid2) {
             bool status = false;
             User_Request user_request = GetUserRequest(userid1,userid2);
+            // Add this entry in friendship table now /////////////////////////////////////////////////////////////
+            AddAMutualConnection(userid1, userid2);
             dBEntityContext.Users_Requests.Remove(user_request);
             dBEntityContext.SaveChanges();
             status = true;
@@ -93,6 +95,7 @@ namespace Happy_Marriage.BusinessLogic
                        on users.UserId1 equals useri.UserId
                        where users.UserId2 == userip.UserId select new Profile_Mini 
                        {
+                           UserId = user.UserId,
                            UserName = user.UserName,
                            ImageUrl = user.ImageUrl,
                            Age = FindAgeFromDateTime(useri.DateOfBirth),
@@ -111,6 +114,7 @@ namespace Happy_Marriage.BusinessLogic
                        where users.UserId1 == userip.UserId
                        select new Profile_Mini
                        {
+                           UserId = user.UserId,
                            UserName = user.UserName,
                            ImageUrl = user.ImageUrl,
                            Age = FindAgeFromDateTime(useri.DateOfBirth),
@@ -135,7 +139,65 @@ namespace Happy_Marriage.BusinessLogic
 
             return list1.Any();
         }
+        //All logic related to mutual connections is here
 
+        public bool AddAMutualConnection(int userid1, int userid2) { 
+            bool status = false;
+            User_Connections uc = new User_Connections {UserId1 = userid1,
+                                                        UserId2 = userid2,
+                                                        CreatedOn = DateTime.Now
+                                                        };
+            User_Connections ucr = new User_Connections {UserId1 = userid2,
+                                                         UserId2 = userid1,
+                                                         CreatedOn = DateTime.Now
+                                                        };
+            dBEntityContext.Users_Friendships.Add(uc);
+            dBEntityContext.Users_Friendships.Add(ucr);
+            dBEntityContext.SaveChanges();
+            status = true;
+            return status;
+        }
+
+        public bool RemoveAMutualConnection(int userid1, int userid2)
+        {
+            bool status = false;
+            User_Connections uc = new User_Connections
+            {
+                UserId1 = userid1,
+                UserId2 = userid2,
+                
+            };
+            User_Connections ucr = new User_Connections
+            {
+                UserId1 = userid2,
+                UserId2 = userid1,
+                
+            };
+            dBEntityContext.Users_Friendships.Remove(uc);
+            dBEntityContext.Users_Friendships.Remove(ucr);
+            dBEntityContext.SaveChanges();
+            status = true;
+            return status;
+        }
+
+        public List<Profile_Mini> GetAllConnectionsOfUser(User userip) {
+            var list = from users in dBEntityContext.Users_Friendships
+                       join user in dBEntityContext.Users
+                       on users.UserId2 equals user.UserId
+                       join useri in dBEntityContext.Users_Info
+                       on users.UserId2 equals useri.UserId
+                       where users.UserId1 == userip.UserId
+                       select new Profile_Mini
+                       {
+                           UserId = user.UserId,
+                           UserName = user.UserName,
+                           ImageUrl = user.ImageUrl,
+                           Age = FindAgeFromDateTime(useri.DateOfBirth),
+                           Job = useri.Job
+                       };
+
+            return list.ToList();
+        }
     }
 
     

@@ -122,6 +122,7 @@ namespace Happy_Marriage.Controllers
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
             //Session user is the receiver here
+            Console.WriteLine(user.UserId+"-"+userid);
             _relationships.AcceptRequest(userid, user.UserId);
             return RedirectToAction("MyRequests", "ProfilePage");
         }

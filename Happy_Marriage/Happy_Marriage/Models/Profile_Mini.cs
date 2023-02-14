@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Happy_Marriage.Models
 {
-    //Frequently used for login purpose
+    //Fill the userid field when using this otherwise doesnt work as expected
     [Serializable]
     public class Profile_Mini
     {
