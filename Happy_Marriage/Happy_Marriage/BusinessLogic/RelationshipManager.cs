@@ -28,13 +28,16 @@ namespace Happy_Marriage.BusinessLogic
             return status;
         }
 
+        public User_Request GetUserRequest(int userid1, int userid2)
+        {
+            var ur = from userr in dBEntityContext.Users_Requests where (userr.UserId1== userid1) select userr;
+            User_Request urr = ur.FirstOrDefault(u => u.UserId2 == userid2);
+            return urr;
+        }
+
         public bool AcceptRequest(int userid1, int userid2) {
             bool status = false;
-            User_Request user_request = new User_Request
-            {
-                UserId1 = userid1,
-                UserId2 = userid2,
-            };
+            User_Request user_request = GetUserRequest(userid1,userid2);
             dBEntityContext.Users_Requests.Remove(user_request);
             dBEntityContext.SaveChanges();
             status = true;
@@ -45,11 +48,7 @@ namespace Happy_Marriage.BusinessLogic
         public bool RejectRequest(int userid1, int userid2)
         {
             bool status = false;
-            User_Request user_request = new User_Request
-            {
-                UserId1 = userid1,
-                UserId2 = userid2,
-            };
+            User_Request user_request = GetUserRequest(userid1, userid2);
             dBEntityContext.Users_Requests.Remove(user_request);
             dBEntityContext.SaveChanges();
             status = true;
@@ -59,11 +58,7 @@ namespace Happy_Marriage.BusinessLogic
         public bool CancelRequest(int userid1, int userid2)
         {
             bool status = false;
-            User_Request user_request = new User_Request
-            {
-                UserId1 = userid1,
-                UserId2 = userid2,
-            };
+            User_Request user_request = GetUserRequest(userid1, userid2);
             dBEntityContext.Users_Requests.Remove(user_request);
             dBEntityContext.SaveChanges();
             status = true;
