@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS happy_marriage;
 CREATE DATABASE happy_marriage;
-use happy_marriage
+use happy_marriage;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(50), email VARCHAR(50), password VARCHAR(20), contactnumber VARCHAR(20), role VARCHAR(30), joinedon DATE,imageurl TEXT, PRIMARY KEY(userid));
@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS users_other_info;
 CREATE TABLE users_other_info(id INT NOT NULL AUTO_INCREMENT, userid INT NOT NULL, property VARCHAR(30), value VARCHAR(30), PRIMARY KEY(id));
 
 DROP TABLE IF EXISTS users_messages;
-CREATE TABLE users_messages(messageid INT NOT NULL AUTO_INCREMENT, userid INT, receivedon DATETIME, content VARCHAR(300), status VARCHAR(30), PRIMARY KEY(messageid));
+CREATE TABLE users_messages(messageid INT NOT NULL AUTO_INCREMENT, userid1 INT, userid2 INT, receivedon DATETIME, content VARCHAR(300), status VARCHAR(30), PRIMARY KEY(messageid));
 
 DROP TABLE IF EXISTS users_uploads;
 CREATE TABLE users_uploads(id INT NOT NULL AUTO_INCREMENT, userid INT, imageurl TEXT, receivedon DATETIME, PRIMARY KEY(id));

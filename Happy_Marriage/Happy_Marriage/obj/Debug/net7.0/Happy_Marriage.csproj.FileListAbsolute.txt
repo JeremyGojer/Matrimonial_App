@@ -520,3 +520,4 @@ D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\refin
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\Happy_Marriage.pdb
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\Happy_Marriage.genruntimeconfig.cache
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\ref\Happy_Marriage.dll
+D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\scopedcss\Views\Messenger\Messenger.cshtml.rz.scp.css

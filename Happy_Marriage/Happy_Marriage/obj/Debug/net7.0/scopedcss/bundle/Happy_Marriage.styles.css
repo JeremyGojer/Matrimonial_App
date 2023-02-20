@@ -1,3 +1,20 @@
+/* _content/Happy_Marriage/Views/Messenger/Messenger.cshtml.rz.scp.css */
+#chat3 .form-control[b-j4n7idrb2o] {
+    border-color: transparent;
+}
+
+    #chat3 .form-control:focus[b-j4n7idrb2o] {
+        border-color: transparent;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+    }
+
+.badge-dot[b-j4n7idrb2o] {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin-left: 2.9rem;
+    margin-top: -.75rem;
+}
 /* _content/Happy_Marriage/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
