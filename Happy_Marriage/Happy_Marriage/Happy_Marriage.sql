@@ -18,14 +18,14 @@ INSERT INTO users(username, email, password, contactnumber, role, joinedon, imag
 DROP TABLE IF EXISTS users_info;
 CREATE TABLE users_info(userid INT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50), gender VARCHAR(20), dateofbirth DATE, job VARCHAR(50),education VARCHAR(50), religion VARCHAR(30), PRIMARY KEY(userid));
 INSERT INTO users_info values(1,"Jeremy","Gojer","Male","1996-02-25","Freelancer","Graduate","Christian");
-INSERT INTO users_info values(2,"Tony","Stark","Male","1980-08-09","Philantrophist","Post-Graduate and Higher","Atheist");
+INSERT INTO users_info values(2,"Tony","Stark","Male","1980-08-09","Philantrophist","Post-Graduate or Higher","Atheist");
 INSERT INTO users_info values(3,"Steve","Rogers","Male","1920-11-11","Soldier","Undergraduate","Catholic");
-INSERT INTO users_info values(4,"Bruce","Banner","Male","1983-05-25","Scientist","Post-Graduate and Higher","Christian");
+INSERT INTO users_info values(4,"Bruce","Banner","Male","1983-05-25","Scientist","Post-Graduate or Higher","Christian");
 INSERT INTO users_info values(5,"Natasha","Romanoff","Female","1985-01-19","Assassin","Graduate","N/A");
 INSERT INTO users_info values(6,"Clint","Barton","Male","1982-04-08","Circus Performer","Undergraduate","Christian");
-INSERT INTO users_info values(7,"Thor","Odinson","Male","0002-02-01","Ruler","Post-Graduate and Higher","Actually a God Himself");
+INSERT INTO users_info values(7,"Thor","Odinson","Male","0002-02-01","Ruler","Post-Graduate or Higher","Actually a God Himself");
 INSERT INTO users_info values(8,"Wanda","Maximoff","Female","1990-03-08","Construction","Undergraduate","Christian");
-INSERT INTO users_info values(9,"Steven","Strange","Male","1982-07-17","Surgeon","Post-Graduate and Higher","Christian");
+INSERT INTO users_info values(9,"Steven","Strange","Male","1982-07-17","Surgeon","Post-Graduate or Higher","Christian");
 INSERT INTO users_info values(10,"Groot","IAmGroot","Other","1998-04-04","Space Pirate","Uneducated","N/A");
 
 DROP TABLE IF EXISTS users_personal_info;

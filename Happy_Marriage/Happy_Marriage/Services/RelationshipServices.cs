@@ -21,5 +21,8 @@ namespace Happy_Marriage.Services
         public List<Profile_Mini> AllSentRequests(User user) => _relationshipManager.AllSentRequests(user);
         public bool IfRequestSent(int userid1, int userid2) => _relationshipManager.IfRequestSent(userid1,userid2);
         public bool IfRequestReceived(int userid1, int userid2) => _relationshipManager.IfRequestReceived(userid1,userid2);
+        public bool AddAMutualConnection(int userid1, int userid2) => _relationshipManager.AddAMutualConnection(userid1,userid2);
+        public bool RemoveAMutualConnection(int userid1, int userid2) => _relationshipManager.RemoveAMutualConnection(userid1,userid2);
+        public List<Profile_Mini> GetAllConnectionsOfUser(User userip) => _relationshipManager.GetAllConnectionsOfUser(userip);
     }
 }

@@ -144,7 +144,21 @@ namespace Happy_Marriage.Controllers
             _relationships.CancelRequest(user.UserId,userid);
             return RedirectToAction("MyRequests", "ProfilePage");
         }
+        public IActionResult MyConnections() {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            ViewData["MyConnections"] = _relationships.GetAllConnectionsOfUser(user);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult RemoveConnection(int userid)
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
 
+            _relationships.RemoveAMutualConnection(userid, user.UserId);
+            return RedirectToAction("MyConnections", "ProfilePage");
+        }
 
         //Code for uploads section /////////////////////////////////////////////////////////////////////////
 

@@ -158,21 +158,19 @@ namespace Happy_Marriage.BusinessLogic
             return status;
         }
 
+        public User_Connections GetMutualConnection(int userid1, int userid2)
+        {
+            var uclist = from user in dBEntityContext.Users_Friendships where (userid1 == user.UserId1) select user;
+            User_Connections uconn = uclist.FirstOrDefault(u => u.UserId2 == userid2);
+            return uconn;
+        }
+
         public bool RemoveAMutualConnection(int userid1, int userid2)
         {
             bool status = false;
-            User_Connections uc = new User_Connections
-            {
-                UserId1 = userid1,
-                UserId2 = userid2,
-                
-            };
-            User_Connections ucr = new User_Connections
-            {
-                UserId1 = userid2,
-                UserId2 = userid1,
-                
-            };
+            User_Connections uc = GetMutualConnection(userid1, userid2);
+            User_Connections ucr = GetMutualConnection(userid2, userid1);
+            
             dBEntityContext.Users_Friendships.Remove(uc);
             dBEntityContext.Users_Friendships.Remove(ucr);
             dBEntityContext.SaveChanges();

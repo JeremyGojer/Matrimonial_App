@@ -1,0 +1,27 @@
+﻿@model Profile_Mini
+@{
+    List<Profile_Mini> myconns = ViewData["MyConnections"] as List<Profile_Mini>;
+}
+@if(myconns == null){
+    <h1>Something Went Wrong</h1>
+}
+else if(myconns.Count == 0){
+    <h1>You have no connections yet</h1>
+}
+else{
+    foreach(var conn in myconns)
+    {
+        <form>
+        <div class="row">
+            <div class="col"><img src=@conn.ImageUrl height="30" /></div>
+            <div class="col">@conn.UserName</div>
+            <div class="col">@conn.Age</div>
+            <input type="hidden" value=@conn.UserId id="userid" name="userid"/>
+                <div class="col"><button class="btn bg-success" formaction="" formmethod="post"> Message </button></div>
+                <div class="col"><button class="btn bg-danger" formaction="/ProfilePage/RemoveConnection/" formmethod="post"> Remove </button></div>
+                
+                
+        </div>
+        </form>
+    }
+}

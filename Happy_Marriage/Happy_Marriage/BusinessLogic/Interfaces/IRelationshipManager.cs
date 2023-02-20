@@ -12,5 +12,8 @@ namespace Happy_Marriage.BusinessLogic.Interfaces
         public List<Profile_Mini> AllSentRequests(User user);
         public bool IfRequestSent(int userid1, int userid2);
         public bool IfRequestReceived(int userid1, int userid2);
+        public bool AddAMutualConnection(int userid1, int userid2);
+        public bool RemoveAMutualConnection(int userid1, int userid2);
+        public List<Profile_Mini> GetAllConnectionsOfUser(User userip);
     }
 }
