@@ -22,6 +22,8 @@ builder.Services.AddTransient<IFileManager, FileManager>();
 builder.Services.AddTransient<IFileServices, FileServices>();
 builder.Services.AddTransient<IRelationshipManager, RelationshipManager>();
 builder.Services.AddTransient<IRelationshipServices, RelationshipServices>();
+builder.Services.AddTransient<IMessengerManager, MessengerManager>();
+builder.Services.AddTransient<IMessengerServices, MessengerServices>();
 
 
 //Add where the session will be stored

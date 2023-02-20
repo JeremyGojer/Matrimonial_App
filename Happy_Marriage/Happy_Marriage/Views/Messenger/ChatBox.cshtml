@@ -1,0 +1,31 @@
+﻿@model User_Messages
+@{
+
+    List<User_Messages> chatmsgs = ViewData["ChatMsgs"] as List<User_Messages>;
+    int sender = int.Parse(ViewData["sender"].ToString());
+
+}
+@if(chatmsgs == null)
+{
+    <h1>No Chat Selected</h1>
+}
+else
+{
+    foreach(var chat in chatmsgs)
+    {
+        <div class="row">
+            @if (chat.UserId1 == sender)
+            {
+                <div class="align-content-end">
+                    @chat.Content
+                </div>
+            }
+            else
+            {
+                <div class="align-content-start">
+                    @chat.Content
+                </div>
+            }
+        </div>
+    }
+}

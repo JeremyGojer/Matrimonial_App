@@ -11,7 +11,8 @@ namespace Happy_Marriage.Utilities
         public DbSet<User_Personal_Info> Users_Personal_Info { get; set; }
         public DbSet<User_Address_Info> Users_Address_Info { get; set; }
         //public DbSet<User_Other_Info> Users_Other_Info { get; set; }
-        //public DbSet<User_Messages> Users_Messages { get; set; }
+        //Storing message metadata and content
+        public DbSet<User_Messages> Users_Messages { get; set; }
 
         //Deals with file local url and not the actual file
         public DbSet<User_Upload> Users_Uploads { get; set; }
