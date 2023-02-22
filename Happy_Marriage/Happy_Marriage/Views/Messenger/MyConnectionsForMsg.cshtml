@@ -1,7 +1,7 @@
 ﻿@model Profile_Mini
 @using System.Text.Json
 @{
-    string con = ViewData["MyConnections"].ToString();
+    string con = TempData["MyConnections"].ToString();
     List<Profile_Mini> myconns = null;
     if (con != null)
     {
@@ -23,12 +23,17 @@
         {
             <form>
                 <input type="hidden" value=@conn.UserId id="userid" name="userid" />
-                <button class="d-none" asp-action="ChatBox" asp-controller="Messenger">
+                
                     <div class="row">
                         <div class="col"><img src=@conn.ImageUrl height="30" /></div>
                         <div class="col">@conn.UserName</div>
+                    <div class="col">
+                        <button formmethod="post" formaction="/Messenger/ChatBox/">
+                            Msg Me
+                        </button>
                     </div>
-                </button>
+                    </div>
+                
                 
             </form>
         }

@@ -26,55 +26,71 @@ namespace Happy_Marriage.Controllers
 
         public IActionResult Messenger()
         {
-            TempData.Keep();
+            
             return View();
         }
         public IActionResult MyMessenger()
         {
-            TempData.Keep();
+            
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            List<Profile_Mini> conn = _relationships.GetAllConnectionsOfUser(user);
+            TempData["MyConnections"] = JsonSerializer.Serialize(conn);
+            // Set userid if clicked on the user from the menu otherwise 0
+            if (TempData["user_id"] == null)
+            {
+                TempData["user_id"] = 0;
+            }
+            string Id = TempData["user_id"].ToString();
+            //Console.WriteLine(Id);
+            int userid = 0;
+            if (Id != null) {
+                userid = int.Parse(Id);
+            }
+            var chatmsgs = _messengerServices.ShowUserMessagesForChat(user.UserId, userid);
+            TempData["ChatMsgs"] = JsonSerializer.Serialize(chatmsgs);
+            TempData["sender"] = user.UserId.ToString();
+
             return View();
         }
 
         public IActionResult MyConnectionsForMsg()
         {
-            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
-            if (user == null) { return RedirectToAction("Login", "Auth"); }
-            List<Profile_Mini> conn = _relationships.GetAllConnectionsOfUser(user);
-            ViewData["MyConnections"] = JsonSerializer.Serialize(conn);
+            TempData.Keep();
             return PartialView();
         }
         public IActionResult ChatBox()
         {
-
+            Console.WriteLine("In get of chatbox");
+            TempData.Keep();
             return PartialView();
         }
         [HttpPost]
         public IActionResult ChatBox(int userid)
         {
+            Console.WriteLine("In post of chatbox");
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
-            //Due for optimisation
-            //TempData["SentMsgs"] = _messengerServices.ShowUserSentMessagesForChat(user.UserId, userid);
-            //TempData["ReceivedMsgs"] = _messengerServices.ShowUserReceivedMessagesForChat(user.UserId, userid);
-            ViewData["ChatMsgs"] = _messengerServices.ShowUserMessagesForChat(user.UserId, userid);
-            ViewData["sender"] = user.UserId;
-            return PartialView();
+            var chatmsgs = _messengerServices.ShowUserMessagesForChat(user.UserId, userid);
+            TempData["ChatMsgs"] = JsonSerializer.Serialize(chatmsgs);
+            TempData["user_id"] = userid.ToString();
+            TempData.Keep();
+            return RedirectToAction("MyMessenger","Messenger");
         }
         [HttpPost]
-        public IActionResult SendMessage(string content,int userid)
+        public IActionResult SendMessage(string textcontent,int userid)
         {
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
             User_Messages msg = new User_Messages { UserId1 = user.UserId, 
                                                     UserId2 = userid,
-                                                    Content = content,
+                                                    Content = textcontent,
                                                     ReceivedOn = DateTime.Now,
                                                     Status = "delivered"};
             _messengerServices.AddAMessage(msg);
+            TempData["user_id"] = userid;
             return RedirectToAction("MyMessenger","Messenger");
         }
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

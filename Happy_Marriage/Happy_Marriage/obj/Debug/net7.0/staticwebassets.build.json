@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8UmxMAI6AoSvVEV+RShD88AZWkU/0CeQhXVCfWw4BvA=",
+  "Hash": "/K2g5u+VxNYbAyOr7wNqRq33GyN0YYXiEm91pdg6P8o=",
   "Source": "Happy_Marriage",
   "BasePath": "_content/Happy_Marriage",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\IronMan09da1112-f5b1-4e15-96e8-8938fba21ee6.jpg",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "User_Uploads/IronMan09da1112-f5b1-4e15-96e8-8938fba21ee6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\User_Uploads\\IronMan09da1112-f5b1-4e15-96e8-8938fba21ee6.jpg"
     }
   ]
 }

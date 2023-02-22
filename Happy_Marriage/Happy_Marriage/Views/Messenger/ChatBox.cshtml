@@ -1,11 +1,23 @@
 ﻿@model User_Messages
+@using System.Text.Json
 @{
 
-    List<User_Messages> chatmsgs = ViewData["ChatMsgs"] as List<User_Messages>;
-    int sender = int.Parse(ViewData["sender"].ToString());
+    //List<User_Messages> chatmsgs = ViewData["ChatMsgs"] as List<User_Messages>;
+    //int sender = int.Parse(ViewData["sender"].ToString());
+    string ch = TempData["ChatMsgs"].ToString();
+    List<User_Messages> chatmsgs = null;
+    string send = TempData["sender"].ToString();
+    int sender = 0;
+    string rec = TempData["user_id"].ToString();
+    int receiver = 0;
+    if (ch != null || send != null || receiver != null) {
+        chatmsgs = JsonSerializer.Deserialize<List<User_Messages>>(ch);
+        sender = int.Parse(send);
+        receiver = int.Parse(rec);
+    }
 
 }
-@if(chatmsgs == null)
+@if(chatmsgs == null || sender == 0 || receiver == 0)
 {
     <h1>No Chat Selected</h1>
 }
@@ -16,16 +28,23 @@ else
         <div class="row">
             @if (chat.UserId1 == sender)
             {
-                <div class="align-content-end">
-                    @chat.Content
-                </div>
+                <p class="text-right">
+                    You : @chat.Content
+                </p>
             }
             else
             {
-                <div class="align-content-start">
-                    @chat.Content
-                </div>
+                <p class="text-left">
+                    Other : @chat.Content
+                </p>
             }
         </div>
     }
+    <div>
+        <form>
+            <textarea id="textcontent" name="textcontent"></textarea>
+            <input type="hidden" id="userid" name="userid" value=@receiver></input>
+            <button class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" type="submit" formaction="/Messenger/SendMessage/" formmethod="post">Send</button>
+        </form>
+    </div>
 }
