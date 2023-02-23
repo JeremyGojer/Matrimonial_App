@@ -522,3 +522,5 @@ D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\Happy
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\ref\Happy_Marriage.dll
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\scopedcss\Views\Messenger\Messenger.cshtml.rz.scp.css
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\scopedcss\Views\Messenger\MyMessenger.cshtml.rz.scp.css
+D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\bin\Debug\net7.0\package.json
+D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\bin\Debug\net7.0\package-lock.json

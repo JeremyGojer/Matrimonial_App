@@ -1,12 +1,8 @@
 Add Dummy Data
 
-Check Search feature
-
 Make Pages for
 	Forgot Password
 	Enter User Address and edit
 	Enter User Education Details and change
 
-Implement Messages and Profile Alert
-
-Add delete and set as profile picture for uploads.
+Add delete picture for uploads.

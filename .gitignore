@@ -1,0 +1,3 @@
+# For npm in the project
+node_modules/
+# For asp.net core mvc
