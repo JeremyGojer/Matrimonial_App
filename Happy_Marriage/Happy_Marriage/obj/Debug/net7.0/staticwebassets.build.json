@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nB00sGiaZ0CiVaE12vmnK+ODCzEAOeK1GpXuW9+7wVA=",
+  "Hash": "z4S9b3if4gKjQfMDls2LMmeuMMy3N+r9WIK7nK3UdIg=",
   "Source": "Happy_Marriage",
   "BasePath": "_content/Happy_Marriage",
   "Mode": "Default",
@@ -117,6 +117,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Home.css"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\SASS.css",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "css/SASS.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\SASS.css"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\SASS.css.map",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "css/SASS.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\SASS.css.map"
     },
     {
       "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\site.css",
@@ -236,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Slider_Home\\slide-3.jpg"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\js\\carousel.js",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "js/carousel.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\carousel.js"
     },
     {
       "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\js\\site.js",
@@ -1630,6 +1681,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\User_Uploads\\IronMan09da1112-f5b1-4e15-96e8-8938fba21ee6.jpg"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\Jeremy28823966-09d4-49af-af55-9d7b11ecd935.jpg",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "User_Uploads/Jeremy28823966-09d4-49af-af55-9d7b11ecd935.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\User_Uploads\\Jeremy28823966-09d4-49af-af55-9d7b11ecd935.jpg"
     }
   ]
 }

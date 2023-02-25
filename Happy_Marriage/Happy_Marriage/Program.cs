@@ -15,9 +15,9 @@ string constring = builder.Configuration.GetConnectionString("DefaultConnection"
 builder.Services.AddDbContext<DBEntityContext>(options => { options.UseMySQL(constring); });
 
 //For sass compliling into css -- adding a service into the program
-builder.Services.AddHostedService(sp => new NpmWatchHostedService(
+/*builder.Services.AddHostedService(sp => new NpmWatchHostedService(
                 enabled: sp.GetRequiredService<IWebHostEnvironment>().IsDevelopment(),
-                logger: sp.GetRequiredService<ILogger<NpmWatchHostedService>>()));
+                logger: sp.GetRequiredService<ILogger<NpmWatchHostedService>>()));*/
 
 //Services Injection
 builder.Services.AddTransient<DBEntityContext>();

@@ -77,6 +77,11 @@ namespace Happy_Marriage.Controllers
             TempData.Keep();
             return RedirectToAction("MyMessenger","Messenger");
         }
+        public IActionResult SendMessage() {
+            TempData.Keep();
+            return PartialView();
+        }
+
         [HttpPost]
         public IActionResult SendMessage(string textcontent,int userid)
         {

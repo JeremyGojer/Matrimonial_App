@@ -9,8 +9,20 @@
       "PackagePath": "staticwebassets\\User_Uploads\\IronMan09da1112-f5b1-4e15-96e8-8938fba21ee6.jpg"
     },
     {
+      "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\Jeremy28823966-09d4-49af-af55-9d7b11ecd935.jpg",
+      "PackagePath": "staticwebassets\\User_Uploads\\Jeremy28823966-09d4-49af-af55-9d7b11ecd935.jpg"
+    },
+    {
       "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\Home.css",
       "PackagePath": "staticwebassets\\css\\Home.css"
+    },
+    {
+      "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\SASS.css",
+      "PackagePath": "staticwebassets\\css\\SASS.css"
+    },
+    {
+      "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\SASS.css.map",
+      "PackagePath": "staticwebassets\\css\\SASS.css.map"
     },
     {
       "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\animate.css\\animate.compat.css",
@@ -51,6 +63,10 @@
     {
       "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\images\\Slider_Home\\slide-3.jpg",
       "PackagePath": "staticwebassets\\images\\Slider_Home\\slide-3.jpg"
+    },
+    {
+      "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\js\\carousel.js",
+      "PackagePath": "staticwebassets\\js\\carousel.js"
     },
     {
       "Id": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\js\\site.js",

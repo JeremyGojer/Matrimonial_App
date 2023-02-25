@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string rec = TempData["user_id"].ToString();
+    int receiver = 0;
+    if (receiver != null)
+    {
+        receiver = int.Parse(rec);
+    }
+}
+
+<div class="chat-search pl-3 pr-3">
+    <form>
+        <div class="input-group">
+        <input type="hidden" id="userid" name="userid" value=@receiver />
+        <input type="text" class="form-control" id="textcontent" name="textcontent" placeholder="Write a message">
+        <div class="input-group-append prepend-white">
+            <span class="input-group-text pl-2 pr-2">
+                <button class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" type="submit" formaction="/Messenger/SendMessage/" formmethod="post"><i class="fs-19 bi bi-cursor ml-2 mr-2"></i></button>
+            </span>
+        </div>
+    </div>
+    </form>
+    
+</div>

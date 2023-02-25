@@ -22,11 +22,11 @@
             <h1>About You</h1>
             @if (url == null)
             {
-                <img src="/images/Default_Profile_Pic.jpg" width=300 height=300 />
+                <img src="/images/Default_Profile_Pic.jpg" style="border-radius:50%" width=300 height=300 />
             }
             else
             {
-                <img src=@user.ImageUrl width=300 height=300 />
+                    <img src=@user.ImageUrl style="border-radius:50%" width=300 height=300 />
             }
             <div>
             <h3>Basic Info</h3>

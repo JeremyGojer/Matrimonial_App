@@ -17,34 +17,44 @@
     }
 
 }
-@if(chatmsgs == null || sender == 0 || receiver == 0)
-{
-    <h1>No Chat Selected</h1>
-}
-else
-{
-    foreach(var chat in chatmsgs)
+<div class="container clearfix">
+    @if (chatmsgs == null || sender == 0 || receiver == 0)
     {
-        <div class="row">
-            @if (chat.UserId1 == sender)
-            {
-                <p class="text-right">
-                    You : @chat.Content
-                </p>
-            }
-            else
-            {
-                <p class="text-left">
-                    Other : @chat.Content
-                </p>
-            }
+        <h1>No Chat Selected</h1>
+    }
+    else
+    {
+        foreach (var chat in chatmsgs)
+        {
+            <div class="row d-flex">
+                
+                    @if (chat.UserId1 == sender)
+                    {
+                        <div class="border border-primary p-2 mr-auto">
+                            You : @chat.Content
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="border border-primary p-2 ml-auto">
+                            Other : @chat.Content
+                        </div>
+                    }
+                
+            </div>
+            <div class="row p-2">
+            </div>
+        }
+        @*<div>
+            <form>
+                <textarea class="form-control" id="textcontent" name="textcontent"></textarea>
+                <input type="hidden" id="userid" name="userid" value=@receiver />
+                <button class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" type="submit" formaction="/Messenger/SendMessage/" formmethod="post">Send</button>
+            </form>
+        </div>*@
+        <div>
+            @Html.Partial("SendMessage")
         </div>
     }
-    <div>
-        <form>
-            <textarea id="textcontent" name="textcontent"></textarea>
-            <input type="hidden" id="userid" name="userid" value=@receiver />
-            <button class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" type="submit" formaction="/Messenger/SendMessage/" formmethod="post">Send</button>
-        </form>
-    </div>
-}
+</div>
+

@@ -80,9 +80,9 @@
                 </nav>
             </header>
         </div>
-
+        <div class="container pt-5 mt-5"></div>
     }
-    
+
     <div>
         <main role="main">
             @RenderBody()
@@ -93,20 +93,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script>
-    // Enable Carousel Indicators
-    $(".item").click(function(){
-    $("#myCarousel").carousel(1);
-    });
-
-    // Enable Carousel Controls
-    $(".left").click(function(){
-    $("#myCarousel").carousel("prev");
-    });
-        $(".right").click(function () {
-            $("#myCarousel").carousel("next");
-        });
-    </script>
+    
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
