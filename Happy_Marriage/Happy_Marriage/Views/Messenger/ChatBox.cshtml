@@ -17,7 +17,7 @@
     }
 
 }
-<div class="container clearfix">
+<div class="container chat-container">
     @if (chatmsgs == null || sender == 0 || receiver == 0)
     {
         <h1>No Chat Selected</h1>
@@ -26,18 +26,22 @@
     {
         foreach (var chat in chatmsgs)
         {
-            <div class="row d-flex">
+            <div class="row">
                 
                     @if (chat.UserId1 == sender)
                     {
-                        <div class="border border-primary p-2 mr-auto">
-                            You : @chat.Content
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2 message-sent">
+                                @chat.Content
+                            </div>
                         </div>
                     }
                     else
                     {
-                        <div class="border border-primary p-2 ml-auto">
-                            Other : @chat.Content
+                        <div class="d-flex flex-row">
+                            <div class="p-2 message-received">
+                                @chat.Content
+                            </div>
                         </div>
                     }
                 
