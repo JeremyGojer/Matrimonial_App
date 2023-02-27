@@ -4,8 +4,8 @@
 
     User_Personal_Info upi = ViewData["upi"] as User_Personal_Info;
 }  
-    
-<h3>Personal Info</h3>
+ 
+<h3>Personal Info</h3> <a href="#">Edit Details</a>
 @if (upi != null)
 {
     <table class="table table-hover">
@@ -19,6 +19,12 @@
         <tr><td>Annual Income</td><td>@upi.AnnualIncome</td></tr>
     </table>
 }
-    
+else
+{
+    <div>
+        <a href="/Auth/PersonalDetailsForm/" class="btn-get-started">Complete Personal Info</a>
+    </div>
+}
+
    
 

@@ -14,6 +14,7 @@ INSERT INTO users(username, email, password, contactnumber, role, joinedon, imag
 INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("ScarletWitch","wanda@avengers.com","Wanda","+916456421364","user","2021-01-01","/images/Default_Profile_Pic.jpg");
 INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("DoctorStrange","strange@kamartaj.com","Steven","+914597213546","admin","2021-01-01","/images/Default_Profile_Pic.jpg");
 INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Groot","groot@gog.com","IAmGroot","+9194214823546","user","2021-01-01","/images/Default_Profile_Pic.jpg");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Witch","wanda@avengers.com","Wanda","+916456421364","user","2021-01-01","/images/Default_Profile_Pic.jpg");
 
 DROP TABLE IF EXISTS users_info;
 CREATE TABLE users_info(userid INT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50), gender VARCHAR(20), dateofbirth DATE, job VARCHAR(50),education VARCHAR(50), religion VARCHAR(30), PRIMARY KEY(userid));
@@ -27,6 +28,7 @@ INSERT INTO users_info values(7,"Thor","Odinson","Male","0002-02-01","Ruler","Po
 INSERT INTO users_info values(8,"Wanda","Maximoff","Female","1990-03-08","Construction","Undergraduate","Christian");
 INSERT INTO users_info values(9,"Steven","Strange","Male","1982-07-17","Surgeon","Post-Graduate or Higher","Christian");
 INSERT INTO users_info values(10,"Groot","IAmGroot","Other","1998-04-04","Space Pirate","Uneducated","N/A");
+INSERT INTO users_info values(11,"Banda","Vaximoff","Female","1990-03-08","Nurse","Undergraduate","Christian");
 
 DROP TABLE IF EXISTS users_personal_info;
 CREATE TABLE users_personal_info(userid INT NOT NULL, height DOUBLE, weight DOUBLE, foodtype VARCHAR(40), smoking VARCHAR(20), alcohol VARCHAR(20), bloodgroup VARCHAR(10), martialstatus VARCHAR(40), annualincome DOUBLE, PRIMARY KEY(userid));
@@ -40,6 +42,7 @@ INSERT INTO users_personal_info values(7,207,98,"All","No","No","N/A","Single",2
 INSERT INTO users_personal_info values(8,158,62,"All","No","No","A +ve","Single",200000);
 INSERT INTO users_personal_info values(9,172,80,"All","No","Occasionally","A +ve","Single",80000000);
 INSERT INTO users_personal_info values(10,240,150,"All","No","No","N/A","Single",200000);
+INSERT INTO users_personal_info values(11,158,62,"All","No","No","A +ve","Single",200000);
 
 DROP TABLE IF EXISTS users_address_info;
 CREATE TABLE users_address_info(id INT NOT NULL AUTO_INCREMENT,userid INT NOT NULL, country VARCHAR(50), state VARCHAR(50), district VARCHAR(50), city VARCHAR(50), pincode VARCHAR(20), addressline2 VARCHAR(100), addressline1 VARCHAR(100), PRIMARY KEY(id));
@@ -53,6 +56,7 @@ INSERT INTO users_address_info values(7,7,"India","Maharashtra","Pune","Pune","5
 INSERT INTO users_address_info values(8,8,"India","Maharashtra","Pune","Pune","411011","Behind Rupee Bank","339/b, rasta peth");
 INSERT INTO users_address_info values(9,9,"India","Maharashtra","Pune","Kirkee","411003","Bombay Pune Road","Near Merial Police Cho");
 INSERT INTO users_address_info values(10,10,"India","Maharashtra","Pune","vanazcorne","411029","Paudroad","7b, anand complex");
+INSERT INTO users_address_info values(11,11,"India","Maharashtra","Pune","Pune","411011","Behind Rupee Bank","339/b, rasta peth");
 
 DROP TABLE IF EXISTS users_other_info;
 CREATE TABLE users_other_info(id INT NOT NULL AUTO_INCREMENT, userid INT NOT NULL, property VARCHAR(30), value VARCHAR(30), PRIMARY KEY(id));

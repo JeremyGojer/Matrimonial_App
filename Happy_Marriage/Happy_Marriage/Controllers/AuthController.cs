@@ -49,7 +49,7 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth,string job, string gender, string religion, string education) {
+        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth,string job, string gender="Male", string religion, string education) {
             User_Register user= new User_Register{UserName=username, Email=email, Password=password,
                         FirstName=firstname, LastName=lastname, ContactNumber=contactnumber, Job=job,
                         Education=education ,Gender=gender, Religion=religion, DateOfBirth=dateofbirth
@@ -62,5 +62,23 @@ namespace Happy_Marriage.Controllers
             ViewData["msg"] = "Something went wrong, please check details again";
             return View();
         }
+
+        public IActionResult PersonalDetailsForm() {
+            ViewData["msg"] = "";
+            return View();
+        }
+        [HttpPost]
+        public IActionResult PersonalDetailsForm(User_Personal_Info pinfo)
+        {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            if (pinfo != null) {
+                _userServices.AddPersonalInfo(user,pinfo);
+                return RedirectToAction("MyProfile","ProfilePage");
+            }
+            ViewData["msg"] = "An Error Occured, Please Try Again";
+            return View();
+        }
+
     }
 }

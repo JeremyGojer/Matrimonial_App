@@ -1,0 +1,11 @@
+﻿@{
+    List<string> countries = null;
+}
+<div>
+    <select id="country" name="country">
+        @foreach(string country in countries) 
+        {
+            <option value="@country">@country</option>
+        }
+    </select>
+</div>
