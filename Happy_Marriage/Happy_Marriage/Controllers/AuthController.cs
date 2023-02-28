@@ -1,6 +1,7 @@
 ﻿using Happy_Marriage.Models;
 using Happy_Marriage.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.NetworkInformation;
 using System.Text.Json;
 
 namespace Happy_Marriage.Controllers
@@ -49,7 +50,8 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth,string job, string gender="Male", string religion, string education) {
+        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth,string job, string gender, string religion, string education) {
+            if(gender == null) { gender="Male"; }
             User_Register user= new User_Register{UserName=username, Email=email, Password=password,
                         FirstName=firstname, LastName=lastname, ContactNumber=contactnumber, Job=job,
                         Education=education ,Gender=gender, Religion=religion, DateOfBirth=dateofbirth
@@ -75,6 +77,24 @@ namespace Happy_Marriage.Controllers
             if (pinfo != null) {
                 _userServices.AddPersonalInfo(user,pinfo);
                 return RedirectToAction("MyProfile","ProfilePage");
+            }
+            ViewData["msg"] = "An Error Occured, Please Try Again";
+            return View();
+        }
+
+        public IActionResult AddressDetailsForm() {
+            ViewData["msg"] = "";
+            ViewData["countries"] = null;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddressDetailsForm(User_Address_Info ainfo) {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            if (ainfo != null)
+            {
+                _userServices.AddAddressInfo(user, ainfo);
+                return RedirectToAction("MyProfile", "ProfilePage");
             }
             ViewData["msg"] = "An Error Occured, Please Try Again";
             return View();

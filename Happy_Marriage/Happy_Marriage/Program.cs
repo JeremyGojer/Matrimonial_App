@@ -29,6 +29,8 @@ builder.Services.AddTransient<IRelationshipManager, RelationshipManager>();
 builder.Services.AddTransient<IRelationshipServices, RelationshipServices>();
 builder.Services.AddTransient<IMessengerManager, MessengerManager>();
 builder.Services.AddTransient<IMessengerServices, MessengerServices>();
+builder.Services.AddTransient<IAjaxManager, AjaxManager>();
+builder.Services.AddTransient<IAjaxServices, AjaxServices>();
 
 
 //Add where the session will be stored
@@ -60,6 +62,9 @@ app.UseRouting();
 app.UseAuthorization();
 //middleware settings for session
 app.UseSession();
+
+//For ApiControllers
+app.MapControllers();
 
 app.MapControllerRoute(
     name: "default",

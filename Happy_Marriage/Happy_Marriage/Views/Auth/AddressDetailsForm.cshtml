@@ -1,0 +1,67 @@
+﻿@model User_Address_Info
+@{
+}
+<div class="container">
+
+    <form>
+
+        <label for="addressline1">Address Line 1</label>
+        <input asp-for="AddressLine1" class="form-control" id="addressline1" name="addressline1" />
+
+        <label for="addressline2">Address Line 2</label>
+        <input asp-for="AddressLine2" class="form-control" id="addressline2" name="addressline2" />
+
+        <label for="city">City or Town</label>
+        <input asp-for="City" class="form-control" id="city" name="city" />
+
+        <label for="pincode">Pincode</label>
+        <input asp-for="PinCode" class="form-control" id="pincode" name="pincode" />
+
+        <label for="country">Country</label>
+        <select asp-for="Country" class="form-control" id="country" name="country">
+            <option>Select Country</option>
+        </select>
+
+        <label for="state">State</label>
+        <select asp-for="State" class="form-control" id="state" name="state">
+            <option>Select Country First</option>
+        </select>
+
+        <label for="district">District or Region</label>
+        <select asp-for="District" class="form-control" id="district" name="district">
+            <option>Select State First</option>
+        </select>
+
+        <button type="submit" class="btn btn-dark btn-lg btn-block" id="btn" name="btn" formmethod="post" formaction="/Auth/AddressDetailsForm/">Submit</button>
+
+    </form>
+    
+
+</div>
+
+@*The @section is used because of await in _Layout.cshtml for script tags*@
+@section Scripts {
+    <script>
+        $().ready(()=>{
+            
+            $.ajax({
+                type : "GET",
+                url : "/AddressApi/Countries/",
+                datatype : "json",
+                success : (result)=>{
+                   var str = "";
+                   console.log(result);
+                   for(var x in result.value){
+                        str += "<option>"+result.value[x]+"</option>";
+                   }
+                   
+                   document.getElementById("country").innerHTML = str;
+                },
+                error : (req,status,error)=>{
+                    console.log("AN ERROR OCCURED WITH AJAX");
+                }
+            });
+
+        });
+    </script>
+}

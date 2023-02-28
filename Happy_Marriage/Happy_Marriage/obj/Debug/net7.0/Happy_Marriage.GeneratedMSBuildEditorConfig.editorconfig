@@ -16,8 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/AddressForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBZGRyZXNzRm9ybS5jc2h0bWw=
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/AddressDetailsForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBZGRyZXNzRGV0YWlsc0Zvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/Login.cshtml]
