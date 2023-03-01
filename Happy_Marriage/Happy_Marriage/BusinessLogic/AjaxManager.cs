@@ -18,23 +18,35 @@ namespace Happy_Marriage.BusinessLogic
         }
 
         public List<string> GetAllCountries() { 
-            var list = new List<string>();
-            list.Add("India");
-            list.Add("China");
-            list.Add("USA");
-            return list;
+            
+            var list = from country in dBEntityContext.Countries select country.Name;
+            return list.ToList();
+        }
+        public int GetCountryIdFromCountry(string country) { 
+            var list = from countries in dBEntityContext.Countries where (countries.Name == country) select countries.Id;
+            int id = list.FirstOrDefault();
+            return id;
         }
 
         public List<string> GetStatesFromCountry(string country)
         {
-            var list = new List<string>();
-            return list;
+            int id = GetCountryIdFromCountry(country);
+            var list = from states in dBEntityContext.States where (states.Country_Id == id) select states.Name;
+            return list.ToList();
+        }
+
+        public int GetStateIdFromState(string state)
+        {
+            var list = from states in dBEntityContext.States where (states.Name == state) select states.Id;
+            int id = list.FirstOrDefault();
+            return id;
         }
 
         public List<string> GetDistrictsFromState(string state)
         {
-            var list = new List<string>();
-            return list;
+            int id = GetStateIdFromState(state);
+            var list = from cities in dBEntityContext.Cities where (cities.State_Id == id) select cities.Name;
+            return list.ToList();
         }
 
 

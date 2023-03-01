@@ -1,9 +1,12 @@
-﻿@model User_Address_Info
+﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@model User_Address_Info
 @{
+    var requestToken = Antiforgery.GetAndStoreTokens(Context).RequestToken;
 }
 <div class="container">
 
     <form>
+        <input id="RequestVerificationToken" type="hidden" value="@requestToken" />
 
         <label for="addressline1">Address Line 1</label>
         <input asp-for="AddressLine1" class="form-control" id="addressline1" name="addressline1" />
@@ -18,12 +21,12 @@
         <input asp-for="PinCode" class="form-control" id="pincode" name="pincode" />
 
         <label for="country">Country</label>
-        <select asp-for="Country" class="form-control" id="country" name="country">
+        <select asp-for="Country" class="form-control" id="country" name="country" oninput="statehandler()">
             <option>Select Country</option>
         </select>
 
         <label for="state">State</label>
-        <select asp-for="State" class="form-control" id="state" name="state">
+        <select asp-for="State" class="form-control" id="state" name="state" oninput="districthandler()">
             <option>Select Country First</option>
         </select>
 
@@ -46,6 +49,7 @@
             
             $.ajax({
                 type : "GET",
+                
                 url : "/AddressApi/Countries/",
                 datatype : "json",
                 success : (result)=>{
@@ -63,5 +67,61 @@
             });
 
         });
+        function statehandler(){
+            var country1 = document.getElementById("country").value;
+            var obj = {Name:country1};
+            
+            $.ajax({
+                type: "POST",
+                headers: {
+                    RequestVerificationToken:
+                        document.getElementById("RequestVerificationToken").value
+                },
+                url: "/AddressApi/States",
+                datatype: "json",
+                contentType: "application/json",
+                data: JSON.stringify(obj),
+                success: (result) => {
+                    var str = "";
+                    console.log(result);
+                    for (var x in result.value) {
+                        str += "<option>" + result.value[x] + "</option>";
+                    }
+
+                    document.getElementById("state").innerHTML = str;
+                },
+                error: (req, status, error) => {
+                    console.log("AN ERROR OCCURED WITH AJAX");
+                }
+            });
+        }
+        function districthandler() {
+            var state = document.getElementById("state").value;
+            var obj = { Name: state };
+            
+            $.ajax({
+                type: "POST",
+                headers: {
+                    RequestVerificationToken:
+                        document.getElementById("RequestVerificationToken").value
+                },
+                url: "/AddressApi/Districts",
+                datatype: "json",
+                contentType: "application/json",
+                data: JSON.stringify(obj),
+                success: (result) => {
+                    var str = "";
+                    console.log(result);
+                    for (var x in result.value) {
+                        str += "<option>" + result.value[x] + "</option>";
+                    }
+
+                    document.getElementById("district").innerHTML = str;
+                },
+                error: (req, status, error) => {
+                    console.log("AN ERROR OCCURED WITH AJAX");
+                }
+            });
+        }
     </script>
 }

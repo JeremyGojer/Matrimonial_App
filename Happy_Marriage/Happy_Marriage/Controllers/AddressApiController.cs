@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace Happy_Marriage.Controllers
 {
-    [Route("AddressApi")]
+    [Route("AddressApi/")]
     [ApiController]
     public class AddressApiController : Controller
     {
@@ -22,24 +22,26 @@ namespace Happy_Marriage.Controllers
         {
             return RedirectToAction("Success", "Home");
         }
-        [Route("Countries")]
+
+        [HttpGet("Countries")]
         public JsonResult Countries() {
             List<string> countries = _ajaxServices.GetAllCountries();
             return new JsonResult(Ok(countries));
         }
-        [Route("States")]
-        [HttpPost]
-        public JsonResult States(string country)
+
+        [HttpPost("States")]
+        public JsonResult States(ApiString country)
         {
-            
-            List<string> states = _ajaxServices.GetStatesFromCountry(country);
+            string? cs = country.Name;         
+            List<string> states = _ajaxServices.GetStatesFromCountry(cs);
             return new JsonResult(Ok(states));
         }
-        [Route("Districts")]
-        [HttpPost]
-        public JsonResult Districts(string state)
+        
+        [HttpPost("Districts")]
+        public JsonResult Districts(ApiString state)
         {
-            List<string> district = _ajaxServices.GetDistrictsFromState(state);
+            string? cs = state.Name;
+            List<string> district = _ajaxServices.GetDistrictsFromState(cs);
             return new JsonResult(Ok(district));
         }
 

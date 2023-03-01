@@ -10,7 +10,7 @@ namespace Happy_Marriage.Utilities
         public DbSet<User_Info> Users_Info { get; set; }
         public DbSet<User_Personal_Info> Users_Personal_Info { get; set; }
         public DbSet<User_Address_Info> Users_Address_Info { get; set; }
-        //public DbSet<User_Other_Info> Users_Other_Info { get; set; }
+        
         //Storing message metadata and content
         public DbSet<User_Messages> Users_Messages { get; set; }
 
@@ -18,6 +18,9 @@ namespace Happy_Marriage.Utilities
         public DbSet<User_Upload> Users_Uploads { get; set; }
         public DbSet<User_Request> Users_Requests { get; set; }
         public DbSet<User_Connections> Users_Friendships { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<State> States { get; set; }
+        public DbSet<City> Cities { get; set; }
 
         //to configure the database connection externally from program.cs and appsettings.json
         public DBEntityContext(DbContextOptions<DBEntityContext> options) : base(options) { 
