@@ -10,7 +10,10 @@ namespace Happy_Marriage.BusinessLogic.Interfaces
         public User Update(User user);
         public User GetUserByEmail(string email);
         public User GetUserByUserId(int userid);
+        public User GetUserByUserName(string username);
+        public bool ResetPassword(string userName, string password);
         public User_Register Register(User_Register user_r);
+        
         public User_Info GetUserInfo(int userid);
         // Operations for User Personal Info Table
         public User_Personal_Info AddPersonalInfo(User user, User_Personal_Info info);

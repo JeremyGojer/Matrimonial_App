@@ -23,6 +23,8 @@ namespace Happy_Marriage.Services
 
         public User GetUserByEmail(string email) => _userManager.GetUserByEmail(email);
         public User GetUserByUserId(int userid) => _userManager.GetUserByUserId(userid);
+        public User GetUserByUserName(string username) => _userManager.GetUserByUserName(username);
+        public bool ResetPassword(string userName, string password) => _userManager.ResetPassword(userName,password);
 
         public User_Register Register(User_Register user_r) => _userManager.Register(user_r);
 

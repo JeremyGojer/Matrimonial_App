@@ -26,12 +26,12 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string email,string password) {
+        public IActionResult Login(string email, string password) {
             User user = _userServices.GetUserByEmail(email);
             if (user != null && user.Password == password) {
                 //Redirect to landing page
                 string jsonuser = JsonSerializer.Serialize(user);
-                HttpContext.Session.SetString("user",jsonuser);
+                HttpContext.Session.SetString("user", jsonuser);
                 return RedirectToAction("Index", "ProfilePage");
             }
             //Back to login form
@@ -39,9 +39,9 @@ namespace Happy_Marriage.Controllers
             return View();
         }
 
-        public IActionResult LogOut() { 
+        public IActionResult LogOut() {
             HttpContext.Session.Remove("user");
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Register()
@@ -50,19 +50,86 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth,string job, string gender, string religion, string education) {
-            if(gender == null) { gender="Male"; }
-            User_Register user= new User_Register{UserName=username, Email=email, Password=password,
-                        FirstName=firstname, LastName=lastname, ContactNumber=contactnumber, Job=job,
-                        Education=education ,Gender=gender, Religion=religion, DateOfBirth=dateofbirth
+        public IActionResult Register(string username, string email, string password, string firstname, string lastname, string contactnumber, DateTime dateofbirth, string job, string gender, string religion, string education) {
+            if (gender == null) { gender = "Male"; }
+            User_Register user = new User_Register { UserName = username, Email = email, Password = password,
+                FirstName = firstname, LastName = lastname, ContactNumber = contactnumber, Job = job,
+                Education = education, Gender = gender, Religion = religion, DateOfBirth = dateofbirth
             };
             if (_userServices.GetUserByEmail(email) == null)
             {
                 _userServices.Register(user);
-                return RedirectToAction("Success","Home");
+                return RedirectToAction("Success", "Home");
             }
             ViewData["msg"] = "Something went wrong, please check details again";
             return View();
+        }
+
+        public IActionResult ForgotPassword() {
+            ViewData["msg"] = "";
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ForgotPassword(string email)
+        {
+            User user = _userServices.GetUserByEmail(email);
+            if (user != null)
+            {
+
+                string guid = Guid.NewGuid().ToString();
+                string uid = "ResetMyPass";
+                string url = "http://localhost:5233/Auth/PasswordResetLink?username=" + user.UserName + "&uid=" + guid;
+                string resetstring = user.UserName + "-" + guid;
+                //Send a url link via Email
+                Console.WriteLine(url);
+                string strresetsessions = HttpContext.Session.GetString("PasswordResetLinkSessions");
+                List<string> resetsessions = null;
+                if (strresetsessions == null)
+                {
+                    resetsessions = new List<string>();
+                }
+                else {
+                    resetsessions = JsonSerializer.Deserialize<List<string>>(strresetsessions);
+                }
+                resetsessions.Add(resetstring);
+
+                HttpContext.Session.SetString("PasswordResetLinkSessions", JsonSerializer.Serialize(resetsessions));
+                ViewData["msg"] = "Email for resetting password sent to "+ user.Email;
+            }
+            else {
+                ViewData["msg"] = "Email mentioned "+ email + " is not registered with us. Please contact admin";
+            }
+            
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult PasswordResetLink([FromQuery(Name="uid")] string uid, [FromQuery(Name = "username")] string username)  {
+            string resetstring = username +"-"+ uid;
+            
+            string list = HttpContext.Session.GetString("PasswordResetLinkSessions");
+            List<string> resetstrings = null;
+            if (list != null)
+            {
+                resetstrings = JsonSerializer.Deserialize<List<string>>(list);
+
+                foreach (var str in resetstrings)
+                {
+                    
+                    if (str.Equals(resetstring))
+                    {
+                        ViewData["user"] = _userServices.GetUserByUserName(username);
+                        ViewData["uid"] = uid;
+                        return View();
+                    }
+                }
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpPost]
+        public IActionResult PasswordResetLink(string username, string password, string uid) {
+            _userServices.ResetPassword(username,password);
+            return RedirectToAction("Index","Home");
         }
 
         public IActionResult PersonalDetailsForm() {
