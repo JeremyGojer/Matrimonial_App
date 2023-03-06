@@ -16,6 +16,38 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pbkhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pbkxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AllUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBbGxVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/BannedUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxCYW5uZWRVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/PendingForApproval.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQZW5kaW5nRm9yQXBwcm92YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/RejectedUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWplY3RlZFVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/AddressDetailsForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBZGRyZXNzRGV0YWlsc0Zvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

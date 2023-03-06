@@ -28,14 +28,26 @@ namespace Happy_Marriage.Controllers
         [HttpPost]
         public IActionResult Login(string email, string password) {
             User user = _userServices.GetUserByEmail(email);
-            if (user != null && user.Password == password) {
+            if (user != null && user.Password == password && user.ApprovalStatus == "Approved")
+            {
                 //Redirect to landing page
                 string jsonuser = JsonSerializer.Serialize(user);
                 HttpContext.Session.SetString("user", jsonuser);
                 return RedirectToAction("Index", "ProfilePage");
             }
+            else if (user != null && user.Password == password && user.ApprovalStatus == "Not Approved")
+            {
+                ViewData["msg"] = "Your Account is pending for approval";
+            }
+            else if (user != null && user.Password == password && user.ApprovalStatus == "Rejected")
+            {
+                ViewData["msg"] = "Your Last Appication was rejected , Please contact admin";
+            }
+            else {
+                ViewData["msg"] = "Incorrect credentials, please try again";
+            }
             //Back to login form
-            ViewData["msg"] = "Incorrect credentials, please try again";
+            
             return View();
         }
 

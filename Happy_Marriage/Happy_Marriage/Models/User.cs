@@ -16,6 +16,7 @@ namespace Happy_Marriage.Models
         public string? Role { get; set; }
         public DateTime JoinedOn { get; set; }
         public string? ImageUrl { get; set; }
+        public string? ApprovalStatus { get; set; }
 
     }
 }

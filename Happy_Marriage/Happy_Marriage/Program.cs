@@ -31,6 +31,8 @@ builder.Services.AddTransient<IMessengerManager, MessengerManager>();
 builder.Services.AddTransient<IMessengerServices, MessengerServices>();
 builder.Services.AddTransient<IAjaxManager, AjaxManager>();
 builder.Services.AddTransient<IAjaxServices, AjaxServices>();
+builder.Services.AddTransient<IAccountManager, AccountManager>();
+builder.Services.AddTransient<IAccountServices, AccountServices>();
 
 
 //Add where the session will be stored

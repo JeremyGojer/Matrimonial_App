@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "11RqpuxFJGuWIbLz+lz8eKmUce2bwmbuRK6QHGhyyhk=",
+  "Hash": "cVxwJdzQuZZjgt1wUBWLwlkwMvkAxA32T7JpGs6frPo=",
   "Source": "Happy_Marriage",
   "BasePath": "_content/Happy_Marriage",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Messenger.css"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\ProfilePage.css",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "css/ProfilePage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ProfilePage.css"
     },
     {
       "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\SASS.css",
@@ -1683,6 +1700,40 @@
       "OriginalItemSpec": "wwwroot\\scss\\_carousel.scss"
     },
     {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\James4d36ec2e-5bd9-4f2e-9e5d-792190132e64.jpg",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "User_Uploads/James4d36ec2e-5bd9-4f2e-9e5d-792190132e64.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\User_Uploads\\James4d36ec2e-5bd9-4f2e-9e5d-792190132e64.jpg"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\Jeremy1a96e950-5394-45e5-b8e3-164e1c407edd.jpg",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "User_Uploads/Jeremy1a96e950-5394-45e5-b8e3-164e1c407edd.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\User_Uploads\\Jeremy1a96e950-5394-45e5-b8e3-164e1c407edd.jpg"
+    },
+    {
       "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\Jeremy910055fa-8324-4b24-8df5-088f438d9ffd.jpg",
       "SourceId": "Happy_Marriage",
       "SourceType": "Discovered",
@@ -1698,6 +1749,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\User_Uploads\\Jeremy910055fa-8324-4b24-8df5-088f438d9ffd.jpg"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\Jeremyc683822d-d292-4bea-b1ec-e5065ed572ba.jpg",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "User_Uploads/Jeremyc683822d-d292-4bea-b1ec-e5065ed572ba.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\User_Uploads\\Jeremyc683822d-d292-4bea-b1ec-e5065ed572ba.jpg"
     }
   ]
 }

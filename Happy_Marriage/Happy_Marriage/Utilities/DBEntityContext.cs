@@ -18,6 +18,7 @@ namespace Happy_Marriage.Utilities
         public DbSet<User_Upload> Users_Uploads { get; set; }
         public DbSet<User_Request> Users_Requests { get; set; }
         public DbSet<User_Connections> Users_Friendships { get; set; }
+        public DbSet<User_Metadata> Users_Metadata { get; set; }    
         public DbSet<Country> Countries { get; set; }
         public DbSet<State> States { get; set; }
         public DbSet<City> Cities { get; set; }

@@ -72,7 +72,8 @@ namespace Happy_Marriage.BusinessLogic
                                    ContactNumber = user_r.ContactNumber,
                                    Role = "user",
                                    JoinedOn = DateTime.Now,
-                                   ImageUrl = "/images/Default_Profile_Pic.jpg"
+                                   ImageUrl = "/images/Default_Profile_Pic.jpg",
+                                   ApprovalStatus = "Not Approved"
             };
 
             //Insert data in Users table
@@ -232,7 +233,19 @@ namespace Happy_Marriage.BusinessLogic
             return age;
         }
 
-        
+        public User_Metadata GetUserMetadata(User user) {
+            var data = from d in dBEntityContext.Users_Metadata where d.UserId == user.UserId select d;
+            var da = data.FirstOrDefault();
+            return da;
+        }
+
+        public List<User> GetAllUsersCriteria(string criteria)
+        {
+            List<User> userlst = new List<User>();
+            var list = from user in dBEntityContext.Users where (user.ApprovalStatus == criteria) select user;
+            if (list != null) { userlst = list.ToList(); }
+            return userlst;
+        }
     }
 
     

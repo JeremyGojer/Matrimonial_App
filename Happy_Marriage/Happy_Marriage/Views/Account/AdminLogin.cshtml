@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string msg = ViewData["msg"] as string;
+}
+
+<div>
+    <h1>Admin Login</h1>
+    <form>
+
+        <label for="email">Enter your email</label>
+        <input type="email" id="email" name="email"/>
+
+        <label for="password">Enter your password</label>
+        <input type="password" id="password" name="password"/>
+        @if (msg != null)
+        {
+            <div style="color:red;">@msg</div>
+        }
+
+        <button type="submit" class="btn btn-dark btn-lg btn-block" asp-controller="Account" asp-action="AdminLogin" formmethod="post">Login</button>
+
+    </form>
+</div>

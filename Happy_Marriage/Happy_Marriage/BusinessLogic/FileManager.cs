@@ -54,6 +54,12 @@ namespace Happy_Marriage.BusinessLogic
             //this hasnt been implemented yet
             bool status = false;
             user.ImageUrl = url;
+            User_Metadata metadata = new User_Metadata();
+            metadata.UserId = user.UserId;
+            metadata.CoverPicture = url;
+            dBEntityContext.Users_Metadata.Update(metadata);
+            dBEntityContext.SaveChanges();
+
             status = true;
             return status;
         }

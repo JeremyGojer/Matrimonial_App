@@ -44,6 +44,8 @@ namespace Happy_Marriage.Services
         public bool IsAddressPresent(User user) => _userManager.IsAddressPresent(user);
 
         public List<Profile_Mini> SearchByAll(UserSearch search, User self) => _userManager.SearchByAll(search, self);
+        public User_Metadata GetUserMetadata(User user) => _userManager.GetUserMetadata(user);
+        public List<User> GetAllUsersCriteria(string criteria) => _userManager.GetAllUsersCriteria(criteria);
 
     }
 }

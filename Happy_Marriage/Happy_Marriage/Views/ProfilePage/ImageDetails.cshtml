@@ -10,9 +10,14 @@
 <div>
     <form>
         <input type="hidden" value=@imgurl id="imgurl" name="imgurl">
-        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" formaction="/ProfilePage/SetAsProfilePhoto" formmethod="post">Set As Profile Picture</button>
-        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" formaction="/ProfilePage/SetAsCoverPhoto" formmethod="post">Set As Cover Picture</button>
-        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" formaction="/ProfilePage/DeleteFromUploads" formmethod="post">Delete Picture</button>
+
+        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" asp-controller="ProfilePage" asp-action="SetAsProfilePhoto" formmethod="post" id="btn1">Set As Profile Picture</button>
+
+        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" asp-controller="ProfilePage" asp-action="SetAsCoverPhoto" formmethod="post" id="btn2">Set As Cover Picture</button>
+
+        <button type="submit" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" asp-controller="ProfilePage" asp-action="DeleteFromUploads" formmethod="post" id="btn3">Delete Picture</button>
+
         <button type="button" class="btn btn-dark btn-lg btn-block mt-3 bg-gradient" href="/ProfliePage/MyUploads">Go Back</button>
+
     </form>
 </div>

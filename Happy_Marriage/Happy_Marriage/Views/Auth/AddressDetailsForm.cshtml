@@ -50,7 +50,7 @@
             $.ajax({
                 type : "GET",
                 
-                url : "/AddressApi/Countries/",
+                url : "/Api/Countries/",
                 datatype : "json",
                 success : (result)=>{
                    var str = "";
@@ -77,7 +77,7 @@
                     RequestVerificationToken:
                         document.getElementById("RequestVerificationToken").value
                 },
-                url: "/AddressApi/States",
+                url: "/Api/States",
                 datatype: "json",
                 contentType: "application/json",
                 data: JSON.stringify(obj),
@@ -105,7 +105,7 @@
                     RequestVerificationToken:
                         document.getElementById("RequestVerificationToken").value
                 },
-                url: "/AddressApi/Districts",
+                url: "/Api/Districts",
                 datatype: "json",
                 contentType: "application/json",
                 data: JSON.stringify(obj),

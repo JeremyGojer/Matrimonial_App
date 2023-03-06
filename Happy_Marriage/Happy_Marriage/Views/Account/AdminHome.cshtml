@@ -1,0 +1,193 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    
+}
+
+<div class="container">
+@section Scripts{
+    <script>
+        $().ready(() => {
+            $("#AllUsers").click(
+            function AllUsers() {
+                $.ajax({
+                    type: "GET",
+
+                    url: "/Api/AllUsers/",
+                    datatype: "json",
+                    success: (result) => {
+                        var str = "";
+                        console.log(result);
+                        for(var x in result.value) {
+                            str += `
+                            <div class="row">
+                                <form>
+                                    <input type="hidden" id="userid" name="userid" value=`+ result.value[x].userId + ` />
+
+                                    <div class="col"> `+ result.value[x].userName + ` </div>
+                                    <div class="col"> `+ result.value[x].approvalStatus + ` </div>
+                                    <div class="col">
+                                        <button formaction="/ProfilePage/OthersProfile/" formmethod="post" > Visit Profile </button>
+                                    </div>
+                                </form>
+                            </div>`
+                            
+                        }
+
+                        document.getElementById("userlst").innerHTML = str;
+                    },
+                    error: (req, status, error) => {
+                        console.log("AN ERROR OCCURED WITH AJAX");
+                    }
+                });
+            });
+
+            $("#PendingForApproval").click(
+            function PendingForApproval(){
+                $.ajax({
+                    type: "GET",
+
+                    url: "/Api/PendingForApprovalUsers/",
+                    datatype: "json",
+                    success: (result) => {
+                        var str = "";
+                        console.log(result);
+                        for (var x in result.value) {
+                            str += `
+                            <div class="flex-row" >
+                                <form>
+                                    <input type="hidden" id="userid" name="userid" value=`+result.value[x].userId+` />
+
+                                    <div class="col" > `+ result.value[x].userName + `</div>
+                                    <div class="col" > `+ result.value[x].approvalStatus + `</div>
+                                    <div class="col" >
+                                        <button formaction="/ProfilePage/OthersProfile/" formmethod = "post" > Visit Profile </button>
+                                    </div>
+                                    <div class="col" >
+                                        <button formaction="/Account/AcceptAccount/" formmethod = "post" > Accept </button>
+                                    </div>
+                                    <div class="col" >
+                                        <button formaction="/Account/RejectAccount/" formmethod = "post" > Reject </button>
+                                    </div>
+                                <form>
+                            </div>`
+                        }
+
+                        document.getElementById("userlst").innerHTML = str;
+                    },
+                    error: (req, status, error) => {
+                        console.log("AN ERROR OCCURED WITH AJAX");
+                    }
+                });
+            });
+
+            $("#RejectedUsers").click(
+            function RejectedUsers(){
+                $.ajax({
+                    type: "GET",
+
+                    url: "/Api/RejectedUsers/",
+                    datatype: "json",
+                    success: (result) => {
+                        var str = "";
+                        console.log(result);
+                        for (var x in result.value) {
+                            str += `
+                            <div class="flex-row" >
+                                <form>
+                                    <input type="hidden" id="userid" name="userid" value=`+result.value[x].userId+` />
+
+                                    <div class="col" >`+result.value[x].userName+`</div>
+                                    <div class="col" > `+result.value[x].approvalStatus+`</div>
+                                    <div class="col" >
+                                        <button formaction="/ProfilePage/OthersProfile/" formmethod = "post" > Visit Profile </button>
+                                    </div>
+                                </form>
+                            </div>
+                            `
+                        }
+
+                        document.getElementById("userlst").innerHTML = str;
+                    },
+                    error: (req, status, error) => {
+                        console.log("AN ERROR OCCURED WITH AJAX");
+                    }
+                });
+            });
+
+            $("#BannedUsers").click(
+            function BannedUsers(){
+                $.ajax({
+                    type: "GET",
+
+                    url: "/Api/BannedUsers/",
+                    datatype: "json",
+                    success: (result) => {
+                        var str = "";
+                        console.log(result);
+                        for (var x in result.value) {
+                            str += `
+                            <div class="flex-row" >
+                                <form>
+                                    <input type="hidden" id="userid" name="userid" value=`+result.value[x].userId+` />
+
+                                    <div class="col" > `+result.value[x].userName+`</div>
+                                    <div class="col" > `+result.value[x].approvalStatus+` </div>
+                                    <div class="col" >
+                                        <button formaction="/ProfilePage/OthersProfile/" formmethod = "post" > Visit Profile </button>
+                                    </div>
+                                    <div class="col" >
+                                        <button formaction="/Account/UpliftBan/" formmethod = "post" > Uplift Ban </button>
+                                    </div>
+                                </form>
+                            </div>
+                            `
+                        }
+
+                        document.getElementById("userlst").innerHTML = str;
+                    },
+                    error: (req, status, error) => {
+                        console.log("AN ERROR OCCURED WITH AJAX");
+                    }
+                });
+            });
+        })   
+        
+        
+
+    </script>
+}
+    <div class="row flex-nowrap">
+        <div class="col col-lg-4">
+            <div class="row">
+                
+                <button id="AllUsers">All Users</button>
+
+            </div>
+            <div class="row">
+
+                <button id="PendingForApproval">Pending For Approval</button>
+
+            </div>
+            <div class="row">
+
+                <button id="RejectedUsers">Rejected Users</button>
+
+            </div>
+            <div class="row">
+
+                <button id="BannedUsers">Banned Users</button>
+
+            </div>
+        </div>
+        <div class="col col-lg-8">
+
+            <div class="container" id="userlst">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

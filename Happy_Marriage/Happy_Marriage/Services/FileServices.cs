@@ -17,7 +17,7 @@ namespace Happy_Marriage.Services
         public List<User_Upload> AllUserImagesUrl(User user) => _fileManager.AllUserImagesUrl(user);
         public bool SetAsProfilePicture(string url, User user) => _fileManager.SetAsProfilePicture(url, user);
 
-
+        public bool SetAsCoverPicture(string url, User user) => _fileManager.SetAsCoverPicture(url, user);
 
 
     }

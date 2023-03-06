@@ -28,10 +28,12 @@ namespace Happy_Marriage.Controllers
             User_Info userinfo = _userServices.GetUserInfo(user.UserId);
             User_Personal_Info upi = _userServices.GetPersonalInfo(user);
             List<User_Address_Info> listuai = _userServices.GetAddressInfo(user);
+            User_Metadata metadata = _userServices.GetUserMetadata(user);
             ViewData["user"] = user;
             ViewData["userinfo"] = userinfo;
             ViewData["upi"] = upi;
             ViewData["listuai"] = listuai;
+            ViewData["metadata"] = metadata;
             return View();
         }
 
@@ -92,10 +94,12 @@ namespace Happy_Marriage.Controllers
             User_Info userinfo = _userServices.GetUserInfo(user.UserId);
             User_Personal_Info upi = _userServices.GetPersonalInfo(user);
             List<User_Address_Info> listuai = _userServices.GetAddressInfo(user);
+            User_Metadata metadata = _userServices.GetUserMetadata(user);
             ViewData["user"] = user;
             ViewData["userinfo"] = userinfo;
             ViewData["upi"] = upi;
             ViewData["listuai"] = listuai;
+            ViewData["metadata"] = metadata;
             return View();
         }
         [HttpPost]
@@ -217,25 +221,31 @@ namespace Happy_Marriage.Controllers
         {
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
+            //Also change the user profile pic in session
+            user.ImageUrl = imgurl;
+            HttpContext.Session.SetString("user", JsonSerializer.Serialize(user));
             _fileServices.SetAsProfilePicture(imgurl,user);
             return RedirectToAction("Index","ProfilePage");
         }
+
         [HttpGet]
         public IActionResult ImageDetails([FromQuery(Name ="img")] string imgurl) {
-            //Also change the user profile pic in session
+           
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
-            user.ImageUrl = imgurl;
-            HttpContext.Session.SetString("user", JsonSerializer.Serialize(user));
+            
             ViewData["imgurl"] = imgurl;
             return View();
         }
         [HttpPost]
         public IActionResult SetAsCoverPhoto(string imgurl)
         {
-            //Yet to be implemented
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            _fileServices.SetAsCoverPicture(imgurl, user);
             return RedirectToAction("Index", "ProfilePage");
         }
+
         [HttpPost]
         public IActionResult DeleteFromUploads(string imgurl)
         {
