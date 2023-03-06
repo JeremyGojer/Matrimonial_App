@@ -40,6 +40,14 @@ namespace Happy_Marriage.BusinessLogic
             return user;
         }
 
+        public User UnBanAccount(User user)
+        {
+            user.ApprovalStatus = "Approved";
+            dBEntityContext.Users.Update(user);
+            dBEntityContext.SaveChanges();
+            return user;
+        }
+
     }
 
     

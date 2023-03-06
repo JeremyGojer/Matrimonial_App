@@ -43,9 +43,6 @@ namespace Happy_Marriage.Controllers
             if (user != null && user.Password == password && user.Role == "admin") {
                 string jsonuser = JsonSerializer.Serialize(user);
                 HttpContext.Session.SetString("admin", jsonuser);
-                TempData["action"] = "PendingForApproval";
-                TempData["users"] = JsonSerializer.Serialize(new List<String>());
-                TempData.Keep();
                 return RedirectToAction("AdminHome", "Account");
             }
             ViewData["msg"] = "Incorrect credentials, please try again";
@@ -59,14 +56,7 @@ namespace Happy_Marriage.Controllers
             TempData.Keep();
             return View();
         }
-        [HttpPost]
-        public IActionResult Users(string action) {
-            TempData["action"] = action;
-            TempData["users"] = JsonSerializer.Serialize(new List<User>());
-            TempData.Keep();
-            return PartialView();
-        }
-        
+        //Sent data is found in api controller
         [HttpPost]
         public IActionResult AcceptAccount(int userid) {
             User user = _userServices.GetUserByUserId(userid);
@@ -93,6 +83,16 @@ namespace Happy_Marriage.Controllers
             if (user != null)
             {
                 _accountServices.BanAccount(user);
+            }
+            return RedirectToAction("AdminHome", "Account");
+        }
+        [HttpPost]
+        public IActionResult UpliftBan(int userid)
+        {
+            User user = _userServices.GetUserByUserId(userid);
+            if (user != null)
+            {
+                _accountServices.UnBanAccount(user);
             }
             return RedirectToAction("AdminHome", "Account");
         }

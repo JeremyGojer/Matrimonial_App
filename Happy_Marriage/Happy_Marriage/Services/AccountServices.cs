@@ -16,6 +16,7 @@ namespace Happy_Marriage.Services
         public User AcceptAccount(User user) => _accountManager.AcceptAccount(user);
         public User RejectAccount(User user) => _accountManager.RejectAccount(user);
         public User BanAccount(User user) => _accountManager.BanAccount(user);
+        public User UnBanAccount(User user) => _accountManager.UnBanAccount(user);
 
     }
 }
