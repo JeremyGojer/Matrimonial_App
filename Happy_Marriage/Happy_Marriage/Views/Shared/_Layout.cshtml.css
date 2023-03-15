@@ -39,4 +39,9 @@ button.accept-policy {
   line-height: inherit;
 }
 
+.overflow-navbar {
+    height:auto;
+    overflow-y:scroll;
+}
+
 

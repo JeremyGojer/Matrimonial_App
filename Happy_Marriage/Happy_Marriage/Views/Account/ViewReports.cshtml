@@ -1,0 +1,26 @@
+﻿@model User_Report
+@{
+    List<User_Report> reports = ViewData["reports"] as List<User_Report>;
+    int count = 1;
+}
+<div class="container-fluid p-5">
+    <div class="overflow-adminhome">
+        <table class="table">
+            <tr><th>Sr no</th><th>Description</th><th>Reported On</th></tr>
+            @foreach (var report in reports)
+            {
+                <tr>
+                    <td>@count</td>
+                    <td>@report.Description</td>
+                    <td>@report.CreatedOn</td>
+                </tr>
+                count++;
+            }
+        </table>
+    </div>
+    <form>
+        <button type="submit" class="btn btn-sm btn-dark btn-block" formmethod="get" asp-action="AdminHome" asp-controller="Account">Go Back</button>
+        <button type="submit" class="btn btn-sm btn-danger btn-block" formmethod="post" asp-action="BanAccount" asp-controller="Account">Ban</button>
+    </form>
+    
+</div>

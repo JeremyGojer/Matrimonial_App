@@ -60,7 +60,12 @@ namespace Happy_Marriage.Controllers
         }
 
         //Code for search section /////////////////////////////////////////////////////////////////////////////////////////
-
+        public IActionResult SearchMenu()
+        {
+            List<Profile_Mini> pmini = TempData["pmini"] as List<Profile_Mini>;
+            ViewData["pmini"] = pmini;
+            return View();
+        }
         public IActionResult Search() {
             return View();
         }
@@ -80,7 +85,7 @@ namespace Happy_Marriage.Controllers
             if (user == null) { return RedirectToAction("Login", "Auth"); }
             List<Profile_Mini> pmini = _userServices.SearchByAll(search, user);
             TempData["pmini"] =  JsonSerializer.Serialize(pmini);
-            return RedirectToAction("Index", "ProfilePage");
+            return RedirectToAction("SearchMenu", "ProfilePage");
         }
 
         public IActionResult SearchResult()
@@ -249,7 +254,16 @@ namespace Happy_Marriage.Controllers
         [HttpPost]
         public IActionResult DeleteFromUploads(string imgurl)
         {
-            //Yet to be Implemented
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            bool status = _fileServices.DeletePicture(imgurl, user);
+            if (!status) {
+                ViewData["msg"] = "Unable to delete image";
+                return RedirectToAction("Index", "ProfilePage");
+            }
+            // Set the image in session if changed
+            HttpContext.Session.SetString("user", JsonSerializer.Serialize(user));
+
             return RedirectToAction("Index", "ProfilePage");
         }
 

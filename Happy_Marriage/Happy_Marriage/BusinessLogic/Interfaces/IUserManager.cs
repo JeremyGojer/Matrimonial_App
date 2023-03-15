@@ -12,6 +12,7 @@ namespace Happy_Marriage.BusinessLogic.Interfaces
         public User GetUserByUserId(int userid);
         public User GetUserByUserName(string username);
         public bool ResetPassword(string userName, string password);
+        public bool ChangePassword(User user, string oldpassword, string newpassword);
         public User_Register Register(User_Register user_r);
         
         public User_Info GetUserInfo(int userid);

@@ -7,8 +7,13 @@ using Happy_Marriage.Services.Interfaces;
 using Happy_Marriage.Utilities;
 using Happy_Marriage.Utilities.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Happy_Marriage.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Configuring a external path for storing data on server
+var config = builder.Configuration.GetSection("ApplicationConfiguration");
+builder.Services.Configure<ApplicationConfiguration>(config);
 
 //Getting mysql connection from appsettings.json
 string constring = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -18,6 +23,20 @@ builder.Services.AddDbContext<DBEntityContext>(options => { options.UseMySQL(con
 /*builder.Services.AddHostedService(sp => new NpmWatchHostedService(
                 enabled: sp.GetRequiredService<IWebHostEnvironment>().IsDevelopment(),
                 logger: sp.GetRequiredService<ILogger<NpmWatchHostedService>>()));*/
+
+//Actions to be taken before starting the server
+/*builder.Services.AddHostedService(conf => new StartupHostedService(
+                enabled: conf.GetRequiredService<IWebHostEnvironment>().IsDevelopment(),
+                logger: conf.GetRequiredService<ILogger<StartupHostedService>>()));*/
+
+//Email smtp server configration from appsettings.json
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+
+//AppConfigServices DI
+builder.Services.AddTransient<IAppConfigServices,AppConfigServices>();
+
+//Email Services injection 
+builder.Services.AddTransient<IEmailServices, EmailServices>();
 
 //Services Injection
 builder.Services.AddTransient<DBEntityContext>();
@@ -39,7 +58,7 @@ builder.Services.AddTransient<IAccountServices, AccountServices>();
 builder.Services.AddDistributedMemoryCache();
 
 //Session management on server side
-builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromSeconds(300);
+builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromSeconds(1000);
                                          options.Cookie.HttpOnly = true;
                                          options.Cookie.IsEssential= true;} );
 

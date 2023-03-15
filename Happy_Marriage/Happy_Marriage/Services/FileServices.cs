@@ -18,6 +18,7 @@ namespace Happy_Marriage.Services
         public bool SetAsProfilePicture(string url, User user) => _fileManager.SetAsProfilePicture(url, user);
 
         public bool SetAsCoverPicture(string url, User user) => _fileManager.SetAsCoverPicture(url, user);
+        public bool DeletePicture(string url, User user) => _fileManager.DeletePicture(url, user);
 
 
     }

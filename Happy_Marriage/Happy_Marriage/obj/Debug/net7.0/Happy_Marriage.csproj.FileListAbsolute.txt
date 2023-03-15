@@ -524,3 +524,5 @@ D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\scope
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\obj\Debug\net7.0\scopedcss\Views\Messenger\MyMessenger.cshtml.rz.scp.css
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\bin\Debug\net7.0\package.json
 D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\bin\Debug\net7.0\package-lock.json
+D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\bin\Debug\net7.0\MailKit.dll
+D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\bin\Debug\net7.0\MimeKit.dll

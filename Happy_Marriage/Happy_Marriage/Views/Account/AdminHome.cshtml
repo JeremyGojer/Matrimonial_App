@@ -20,7 +20,7 @@
                                 var str = `<table class="table">
                                             <tr> <th>User Name </th><th> Approval Status </th> <th>Visit Profile</th></tr>
                                            `;
-                        console.log(result);
+                        
                         for(var x in result.value) {
                             str += `
                                     <tr>
@@ -54,7 +54,7 @@
                     success: (result) => {
                         var str = `<table class="table">
                                     <tr><th>User Name</th><th>Approval Status</th><th>Visit Profile</th><th>Accept</th><th>Reject</th></tr>`;
-                        console.log(result);
+                        
                         for (var x in result.value) {
                             str += `
                             <tr>
@@ -100,7 +100,7 @@
                     success: (result) => {
                         var str = `<table class="table">
                                    <tr><th>User Name</th><th>Approval Status</th><th>Visit Profile</th></tr>`;
-                        console.log(result);
+                        
                         for (var x in result.value) {
                             str += `
                             <tr>
@@ -124,6 +124,53 @@
                 });
             });
 
+            $("#Reports").click(
+                function Reports() {
+                    $.ajax({
+                        type: "GET",
+
+                        url: "/Api/Reports/",
+                        datatype: "json",
+                        success: (result) => {
+                            var str = `<table class=table>
+                                       <tr><th>User Name</th><th>No of Reports</th><th>View Reports</th><th>Visit Profile</th><th>Ban</th></tr>`;
+                            
+                            for (var x in result.value) {
+                                
+                                str += `
+                                    <tr>
+                                        <td> `+ result.value[x].userName + `</td>
+                                        <td> `+ result.value[x].reportCount +` </td>
+                                        <td>
+                                            <form>
+                                                <input type="hidden" id="userid" name="userid" value=`+ result.value[x].userId + ` />
+                                                <button class="btn btn-info btn-block" formaction="/Account/ViewReports/" formmethod = "post" > Show Reports </button>
+                                            </form>
+                                        </td>
+                                         <td>
+                                            <form>
+                                                <input type="hidden" id="userid" name="userid" value=`+ result.value[x].userId + ` />
+                                                <button class="btn btn-info btn-block" formaction="/ProfilePage/OthersProfile/" formmethod = "post" > Visit Profile </button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form>
+                                                <input type="hidden" id="userid" name="userid" value=`+ result.value[x].userId + ` />
+                                                <button class="btn btn-warning btn-block" formaction="/Account/BanAccount/" formmethod = "post" > Ban </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    `
+                            }
+                            str += "</table>"
+                            document.getElementById("userlst").innerHTML = str;
+                        },
+                        error: (req, status, error) => {
+                            console.log("AN ERROR OCCURED WITH AJAX");
+                        }
+                    });
+                });
+
             $("#BannedUsers").click(
             function BannedUsers(){
                 $.ajax({
@@ -134,7 +181,7 @@
                     success: (result) => {
                         var str = `<table class=table>
                                                <tr><th>User Name</th><th>Approval Status</th><th>Visit Profile</th><th>Uplift Ban</th></tr>`;
-                        console.log(result);
+                        
                         for (var x in result.value) {
                             str += `
                             <tr>
@@ -188,11 +235,16 @@
             </div>
             <div class="row">
 
+                <button class="btn btn-dark btn-lg btn-block" id="Reports">Reports</button>
+
+            </div>
+            <div class="row">
+
                 <button class="btn btn-dark btn-lg btn-block" id="BannedUsers">Banned Users</button>
 
             </div>
         </div>
-        <div class="col col-lg-8">
+        <div class="col col-lg-8 overflow-adminhome">
 
             <div class="container" id="userlst">
 

@@ -96,6 +96,16 @@ namespace Happy_Marriage.Controllers
             }
             return RedirectToAction("AdminHome", "Account");
         }
+        [HttpPost]
+        public IActionResult ViewReports(int userid)
+        {
+            List<User_Report> reports = _accountServices.FindReportsForUser(userid);
+            if (reports != null) {
+                ViewData["reports"] = reports;
+                return View();
+            }
+            return RedirectToAction("AdminHome", "Account");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

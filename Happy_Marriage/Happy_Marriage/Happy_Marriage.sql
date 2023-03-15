@@ -72,3 +72,7 @@ CREATE TABLE users_requests(id INT NOT NULL AUTO_INCREMENT, userid1 INT, userid2
 
 DROP TABLE IF EXISTS users_friendships;
 CREATE TABLE users_friendships(id INT NOT NULL AUTO_INCREMENT, userid1 INT, userid2 INT, createdon DATETIME, PRIMARY KEY(id));
+
+DROP TABLE IF EXISTS users_reports;
+CREATE TABLE users_reports(id INT NOT NULL AUTO_INCREMENT, reportedon INT, reportedby INT, description VARCHAR(300), createdon DATETIME, PRIMARY KEY(id));
+

@@ -1,8 +1,4 @@
 Add Dummy Data
 
-Make Pages for
-	Forgot Password
-	Enter User Address and edit
-	Enter User Education Details and change
 
 Add delete picture for uploads.

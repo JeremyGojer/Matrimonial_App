@@ -8,17 +8,19 @@ namespace Happy_Marriage.Controllers
 {
     [Route("Api/")]
     [ApiController]
-    public class AddressApiController : Controller
+    public class ApiController : Controller
     {
-        private readonly ILogger<AddressApiController> _logger;
+        private readonly ILogger<ApiController> _logger;
         private readonly IAjaxServices _ajaxServices;
         private readonly IUserServices _userServices;
+        private readonly IAccountServices _account;
 
-        public AddressApiController(ILogger<AddressApiController> logger, IAjaxServices ajaxServices, IUserServices userServices)
+        public ApiController(ILogger<ApiController> logger, IAjaxServices ajaxServices, IUserServices userServices, IAccountServices account)
         {
             _logger = logger;
             _ajaxServices = ajaxServices;
             _userServices = userServices;
+            _account = account;
         }
 
         public IActionResult Index()
@@ -35,11 +37,11 @@ namespace Happy_Marriage.Controllers
         [HttpPost("States")]
         public JsonResult States(ApiString country)
         {
-            string? cs = country.Name;         
+            string? cs = country.Name;
             List<string> states = _ajaxServices.GetStatesFromCountry(cs);
             return new JsonResult(Ok(states));
         }
-        
+
         [HttpPost("Districts")]
         public JsonResult Districts(ApiString state)
         {
@@ -75,6 +77,13 @@ namespace Happy_Marriage.Controllers
             List<User> users = _userServices.GetAllUsersCriteria("Banned");
 
             return new JsonResult(Ok(users));
+        }
+        [HttpGet("Reports")]
+        public JsonResult Reports()
+        {
+            List<ReportView> reports = _account.ViewReportData();
+
+            return new JsonResult(Ok(reports));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

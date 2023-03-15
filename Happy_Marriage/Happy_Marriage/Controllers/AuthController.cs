@@ -10,11 +10,13 @@ namespace Happy_Marriage.Controllers
     {
         private readonly ILogger<AuthController> _logger;
         private readonly IUserServices _userServices;
+        private readonly IEmailServices _email;
 
-        public AuthController(ILogger<AuthController> logger, IUserServices userServices)
+        public AuthController(ILogger<AuthController> logger, IUserServices userServices, IEmailServices email)
         {
             _logger = logger;
             _userServices = userServices;
+            _email = email;
         }
         public IActionResult Index()
         {
@@ -47,7 +49,7 @@ namespace Happy_Marriage.Controllers
                 ViewData["msg"] = "Incorrect credentials, please try again";
             }
             //Back to login form
-            
+
             return View();
         }
 
@@ -93,7 +95,11 @@ namespace Happy_Marriage.Controllers
                 string url = "http://localhost:5233/Auth/PasswordResetLink?username=" + user.UserName + "&uid=" + guid;
                 string resetstring = user.UserName + "-" + guid;
                 //Send a url link via Email
-                Console.WriteLine(url);
+                //Console.WriteLine(url);
+                _email.SendEmail(new EmailData { EmailToId=user.Email,
+                                                 EmailToName=user.UserName,
+                                                 EmailSubject="Your link for password reset",
+                                                 EmailBody="Your link is "+url});
                 string strresetsessions = HttpContext.Session.GetString("PasswordResetLinkSessions");
                 List<string> resetsessions = null;
                 if (strresetsessions == null)
@@ -106,19 +112,19 @@ namespace Happy_Marriage.Controllers
                 resetsessions.Add(resetstring);
 
                 HttpContext.Session.SetString("PasswordResetLinkSessions", JsonSerializer.Serialize(resetsessions));
-                ViewData["msg"] = "Email for resetting password sent to "+ user.Email;
+                ViewData["msg"] = "Email for resetting password sent to " + user.Email;
             }
             else {
-                ViewData["msg"] = "Email mentioned "+ email + " is not registered with us. Please contact admin";
+                ViewData["msg"] = "Email mentioned " + email + " is not registered with us. Please contact admin";
             }
-            
+
             return View();
         }
 
         [HttpGet]
-        public IActionResult PasswordResetLink([FromQuery(Name="uid")] string uid, [FromQuery(Name = "username")] string username)  {
-            string resetstring = username +"-"+ uid;
-            
+        public IActionResult PasswordResetLink([FromQuery(Name = "uid")] string uid, [FromQuery(Name = "username")] string username) {
+            string resetstring = username + "-" + uid;
+
             string list = HttpContext.Session.GetString("PasswordResetLinkSessions");
             List<string> resetstrings = null;
             if (list != null)
@@ -127,7 +133,7 @@ namespace Happy_Marriage.Controllers
 
                 foreach (var str in resetstrings)
                 {
-                    
+
                     if (str.Equals(resetstring))
                     {
                         ViewData["user"] = _userServices.GetUserByUserName(username);
@@ -140,8 +146,8 @@ namespace Happy_Marriage.Controllers
         }
         [HttpPost]
         public IActionResult PasswordResetLink(string username, string password, string uid) {
-            _userServices.ResetPassword(username,password);
-            return RedirectToAction("Index","Home");
+            _userServices.ResetPassword(username, password);
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult PersonalDetailsForm() {
@@ -154,8 +160,8 @@ namespace Happy_Marriage.Controllers
             User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
             if (user == null) { return RedirectToAction("Login", "Auth"); }
             if (pinfo != null) {
-                _userServices.AddPersonalInfo(user,pinfo);
-                return RedirectToAction("MyProfile","ProfilePage");
+                _userServices.AddPersonalInfo(user, pinfo);
+                return RedirectToAction("MyProfile", "ProfilePage");
             }
             ViewData["msg"] = "An Error Occured, Please Try Again";
             return View();
@@ -176,6 +182,27 @@ namespace Happy_Marriage.Controllers
                 return RedirectToAction("MyProfile", "ProfilePage");
             }
             ViewData["msg"] = "An Error Occured, Please Try Again";
+            return View();
+        }
+
+        public IActionResult ChangePassword() {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            ViewData["msg"] = "";
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ChangePassword(string oldpassword, string newpassword) {
+            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            bool status = _userServices.ChangePassword(user, oldpassword, newpassword);
+            if (status) {
+                //Change password in session too
+                user.Password = newpassword;
+                HttpContext.Session.SetString("user", JsonSerializer.Serialize(user));
+                return RedirectToAction("MyProfile", "ProfilePage");
+            }
+            ViewData["msg"] = "Old Password doesnt match";
             return View();
         }
 

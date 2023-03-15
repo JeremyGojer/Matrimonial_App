@@ -10,5 +10,6 @@ namespace Happy_Marriage.BusinessLogic.Interfaces
 
         public bool SetAsProfilePicture(string url, User user);
         public bool SetAsCoverPicture(string url, User user);
+        public bool DeletePicture(string url, User user);
     }
 }

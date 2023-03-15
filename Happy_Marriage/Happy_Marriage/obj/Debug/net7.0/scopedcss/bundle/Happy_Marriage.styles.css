@@ -74,4 +74,9 @@ button.accept-policy[b-vf3e753k02] {
   line-height: inherit;
 }
 
+.overflow-navbar[b-vf3e753k02] {
+    height:auto;
+    overflow-y:scroll;
+}
+
 

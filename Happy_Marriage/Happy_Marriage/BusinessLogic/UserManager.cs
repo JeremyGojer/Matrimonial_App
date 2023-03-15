@@ -109,6 +109,18 @@ namespace Happy_Marriage.BusinessLogic
             return status;
         }
 
+        public bool ChangePassword(User user, string oldpassword, string newpassword) { 
+            bool status = false;
+
+            if (user.Password == oldpassword) {
+                user.Password = newpassword;
+                dBEntityContext.Users.Update(user);
+                dBEntityContext.SaveChanges();
+                status = true;
+            }
+
+            return status;
+        }
         public User_Info GetUserInfo(int userid) {
             var list = from user in dBEntityContext.Users_Info where user.UserId == userid select user;
             User_Info userinfo = list.FirstOrDefault(u => u.UserId == userid);

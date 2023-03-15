@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cVxwJdzQuZZjgt1wUBWLwlkwMvkAxA32T7JpGs6frPo=",
+  "Hash": "LbvDg3agqEMHcq/tOn74uyaf5XT8nBRCplzBBq2Q1M8=",
   "Source": "Happy_Marriage",
   "BasePath": "_content/Happy_Marriage",
   "Mode": "Default",
@@ -1715,23 +1715,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\User_Uploads\\James4d36ec2e-5bd9-4f2e-9e5d-792190132e64.jpg"
-    },
-    {
-      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\Jeremy1a96e950-5394-45e5-b8e3-164e1c407edd.jpg",
-      "SourceId": "Happy_Marriage",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
-      "BasePath": "_content/Happy_Marriage",
-      "RelativePath": "User_Uploads/Jeremy1a96e950-5394-45e5-b8e3-164e1c407edd.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\User_Uploads\\Jeremy1a96e950-5394-45e5-b8e3-164e1c407edd.jpg"
     },
     {
       "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\User_Uploads\\Jeremy910055fa-8324-4b24-8df5-088f438d9ffd.jpg",
