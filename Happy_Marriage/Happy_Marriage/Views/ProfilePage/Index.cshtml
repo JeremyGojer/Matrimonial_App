@@ -1,13 +1,27 @@
 ﻿
 @{
 }
-<div class="text-lg-center">
-    @Html.Partial("Search")
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-flex flex-column pt-3 text-white bg-dark mh-100" style="width:250px">
+            @Html.Partial("Sidebar.cshtml")
+        </div>
+        <div class="container border border-success col-6">
+            
+                Feed
+            
+        
+        </div>
+        <div class="container border border-warning col-3">
+            
+                Advertisment
+            
+        
+        </div>
+    </div>
 </div>
-<br/>
-<div class="text-lg-center">
-    @Html.Partial("SearchResult")
-</div>
+
+
 
 
 
