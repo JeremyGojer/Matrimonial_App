@@ -1,18 +1,18 @@
 ﻿
 @{
 }
-<div class="container-fluid">
-    <div class="row">
-        <div class="d-flex flex-column pt-3 text-white bg-dark mh-100" style="width:250px">
+<div class="container-fluid min-vh-100 d-flex flex-column">
+    <div class="row flex-grow-1">
+        <div class="d-flex flex-column pt-3 text-white bg-dark" style="width:250px">
             @Html.Partial("Sidebar.cshtml")
         </div>
-        <div class="container border border-success col-6">
+        <div class="container border border-success col-7" id="feed">
             
-                Feed
+                Empty Feed
             
         
         </div>
-        <div class="container border border-warning col-3">
+        <div class="container border border-warning col-2" id="advertisment">
             
                 Advertisment
             

@@ -258,6 +258,11 @@ namespace Happy_Marriage.BusinessLogic
             if (list != null) { userlst = list.ToList(); }
             return userlst;
         }
+        public User_Report AddReport(User_Report report) {
+            dBEntityContext.Users_Reports.Add(report);
+            dBEntityContext.SaveChanges();
+            return report;
+        }
     }
 
     

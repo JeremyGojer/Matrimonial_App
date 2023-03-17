@@ -1,7 +1,9 @@
-﻿using Happy_Marriage.Models;
+﻿using Happy_Marriage.Exceptions;
+using Happy_Marriage.Models;
 using Happy_Marriage.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Reflection.Metadata;
 using System.Text.Json;
 
 namespace Happy_Marriage.Controllers
@@ -20,11 +22,30 @@ namespace Happy_Marriage.Controllers
             _fileServices = fileServices;
             _relationships = relationship;
         }
-
+        public User GetUserFromSession()
+        {
+            User user = null;
+            try {
+                
+                string usrstr = HttpContext.Session.GetString("user");
+                if (usrstr != null)
+                    user = JsonSerializer.Deserialize<User>(usrstr);
+                return user;
+            }
+            catch (Exception e) {
+                SessionExpiryLogout();
+                return null;
+            }
+            
+        }
+        public IActionResult SessionExpiryLogout() { 
+            return RedirectToAction("Login","Auth");
+        }
         public IActionResult MyProfile()
         {
-            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
-            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            User user = GetUserFromSession();
+            /*User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
+            if (user == null) { return RedirectToAction("Login", "Auth"); }*/
             User_Info userinfo = _userServices.GetUserInfo(user.UserId);
             User_Personal_Info upi = _userServices.GetPersonalInfo(user);
             List<User_Address_Info> listuai = _userServices.GetAddressInfo(user);
@@ -154,9 +175,24 @@ namespace Happy_Marriage.Controllers
             return RedirectToAction("MyRequests", "ProfilePage");
         }
         public IActionResult MyConnections() {
-            User user = JsonSerializer.Deserialize<User>(HttpContext.Session.GetString("user"));
-            if (user == null) { return RedirectToAction("Login", "Auth"); }
+            User user = GetUserFromSession();
             ViewData["MyConnections"] = _relationships.GetAllConnectionsOfUser(user);
+            return View();
+        }
+        public IActionResult GenerateReport(int userid) {
+            User user = GetUserFromSession();
+            ViewData["msg"] = "";
+            ViewData["ReportedOn"] = userid;
+            ViewData["ReportedBy"] = user.UserId;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult GenerateReport(User_Report report) {
+            report.CreatedOn = DateTime.Now;
+            _userServices.AddReport(report);
+            ViewData["msg"] = "reported sucessfully";
+            ViewData["ReportedOn"] = report.ReportedOn;
+            ViewData["ReportedBy"] = report.ReportedBy;
             return View();
         }
         [HttpPost]

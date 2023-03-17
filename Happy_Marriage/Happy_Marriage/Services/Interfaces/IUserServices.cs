@@ -24,5 +24,6 @@ namespace Happy_Marriage.Services.Interfaces
         public List<Profile_Mini> SearchByAll(UserSearch search, User self);
         public User_Metadata GetUserMetadata(User user);
         public List<User> GetAllUsersCriteria(string criteria);
+        public User_Report AddReport(User_Report report);
     }
 }

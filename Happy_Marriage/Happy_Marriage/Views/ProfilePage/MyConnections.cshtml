@@ -23,7 +23,7 @@
                     <div class="col">@conn.Age</div>
                     <input type="hidden" value=@conn.UserId id="userid" name="userid" />
                     <div class="col"><button class="btn btn-info btn-block" formaction="/ProfilePage/OthersProfile/" formmethod="post"> Visit Profile </button></div>
-                    <div class="col"><button class="btn bg-warning" formaction="" formmethod="post"> Report </button></div>
+                    <div class="col"><button class="btn bg-warning" formaction="/ProfilePage/GenerateReport/" formmethod="get"> Report </button></div>
                     <div class="col"><button class="btn bg-danger" formaction="/ProfilePage/RemoveConnection/" formmethod="post"> Remove </button></div>
 
 

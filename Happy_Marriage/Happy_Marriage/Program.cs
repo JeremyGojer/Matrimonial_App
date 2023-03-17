@@ -8,6 +8,7 @@ using Happy_Marriage.Utilities;
 using Happy_Marriage.Utilities.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Happy_Marriage.Models;
+using Happy_Marriage.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -64,6 +65,7 @@ builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromSeco
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers(options => { options.Filters.Add(new SessionExpiryResponseFilter());});
 
 var app = builder.Build();
 
