@@ -94,12 +94,15 @@ namespace Happy_Marriage.Controllers
                 string uid = "ResetMyPass";
                 string url = "http://localhost:5233/Auth/PasswordResetLink?username=" + user.UserName + "&uid=" + guid;
                 string resetstring = user.UserName + "-" + guid;
+                ///////////////////////////////////////////////////////////////////////////////////////////////////
                 //Send a url link via Email
                 //Console.WriteLine(url);
-                _email.SendEmail(new EmailData { EmailToId=user.Email,
+                /*_email.SendEmail(new EmailData { EmailToId=user.Email,
                                                  EmailToName=user.UserName,
                                                  EmailSubject="Your link for password reset",
-                                                 EmailBody="Your link is "+url});
+                                                 EmailBody="Your link is "+url});*/
+                _email.SendEmail(new Message(user.Email,"Password Recovery", url));
+                ///////////////////////////////////////////////////////////////////////////////////////////////////
                 string strresetsessions = HttpContext.Session.GetString("PasswordResetLinkSessions");
                 List<string> resetsessions = null;
                 if (strresetsessions == null)

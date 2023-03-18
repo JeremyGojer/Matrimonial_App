@@ -32,12 +32,14 @@ builder.Services.AddDbContext<DBEntityContext>(options => { options.UseMySQL(con
 
 //Email smtp server configration from appsettings.json
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddSingleton(builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>());
 
 //AppConfigServices DI
 builder.Services.AddTransient<IAppConfigServices,AppConfigServices>();
 
 //Email Services injection 
-builder.Services.AddTransient<IEmailServices, EmailServices>();
+builder.Services.AddScoped<IEmailServices, EmailServices>();
+
 
 //Services Injection
 builder.Services.AddTransient<DBEntityContext>();
