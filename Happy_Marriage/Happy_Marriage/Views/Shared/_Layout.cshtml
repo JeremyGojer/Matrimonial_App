@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="~/css/Messenger.css" />
     <link rel="stylesheet" href="~/css/ProfilePage.css" />
     <link rel="stylesheet" href="~/css/SASS.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ResponsiveSidebar.css" />
     
     
 </head>
@@ -42,6 +43,8 @@
                 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark box-shadow">
                     <div class="container-fluid">
                         <a class="navbar-brand" asp-area="" asp-controller="ProfilePage" asp-action="Index">Happy_Marriage</a>
+                        @*For Responsive Sidebar*@
+                        <button type="button" asp-area="" id="sidebarCollapse" class="btn btn-dark"><span>Sidebar</span></button>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -56,8 +59,6 @@
                                 </li>*@
                             </ul>
                             <ul class="navbar-nav flex-grow">
-
-                                //Get the user from session
 
                                 @if (user == null)
                                 {
@@ -80,6 +81,7 @@
                     </div>
                 </nav>
                 
+                
             </header>
         </div>
         
@@ -87,7 +89,26 @@
 
     <div>
         <main role="main">
-            @RenderBody()
+            @if (user != null)
+            {
+                <div class="wrapper">
+
+                    @Html.Partial("ResponsiveSidebar.cshtml")
+
+                    <div id="content" class="container-fluid">
+                        @RenderBody()
+                    </div>
+
+                </div>
+
+            }
+            else
+            {
+                <div>
+                    @RenderBody()
+                </div>
+            }
+            
         </main>
     </div>
             
@@ -96,7 +117,22 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                    $('#content').toggleClass('active');
+                });
+                
+            });
+
+
+        </script>
+    
+    
     
     @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 </html>

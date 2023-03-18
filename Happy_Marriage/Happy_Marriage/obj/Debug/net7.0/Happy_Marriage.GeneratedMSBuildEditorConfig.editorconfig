@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pbkRhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pbkhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -128,6 +132,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcUGVyc29uYWxJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/ResponsiveSidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcUmVzcG9uc2l2ZVNpZGViYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -146,6 +154,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/ResponsiveSidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlc3BvbnNpdmVTaWRlYmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/Sidebar.cshtml]

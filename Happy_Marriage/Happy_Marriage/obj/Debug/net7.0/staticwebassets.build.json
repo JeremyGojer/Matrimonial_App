@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LbvDg3agqEMHcq/tOn74uyaf5XT8nBRCplzBBq2Q1M8=",
+  "Hash": "nS74eLxuAyW931e+R4HYZozEPchD6dvdXo5ZYz76U+k=",
   "Source": "Happy_Marriage",
   "BasePath": "_content/Happy_Marriage",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\ProfilePage.css"
+    },
+    {
+      "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\ResponsiveSidebar.css",
+      "SourceId": "Happy_Marriage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\",
+      "BasePath": "_content/Happy_Marriage",
+      "RelativePath": "css/ResponsiveSidebar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ResponsiveSidebar.css"
     },
     {
       "Identity": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\wwwroot\\css\\SASS.css",
