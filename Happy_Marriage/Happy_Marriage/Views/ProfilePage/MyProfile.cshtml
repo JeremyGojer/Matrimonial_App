@@ -5,6 +5,10 @@
 
     User_Info userinfo = ViewData["userinfo"] as User_Info;
     User_Metadata metadata = ViewData["metadata"] as User_Metadata;
+    if(metadata.CoverPicture == null)
+    {
+        metadata.CoverPicture = "";    
+    }
 
     string url = user.ImageUrl;
 

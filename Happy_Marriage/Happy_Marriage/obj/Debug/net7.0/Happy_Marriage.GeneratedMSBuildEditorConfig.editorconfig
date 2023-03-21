@@ -9,181 +9,181 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Happy_Marriage
 build_property.RootNamespace = Happy_Marriage
-build_property.ProjectDir = D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\
+build_property.ProjectDir = C:\Users\Jeremy\Desktop\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage
+build_property.MSBuildProjectDirectory = C:\Users\Jeremy\Desktop\GIT REPO\Matrimonial_App\Happy_Marriage\Happy_Marriage
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminDashboard.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pbkRhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminHome.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pbkhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminLogin.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/AdminLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZG1pbkxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/Index.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/ViewReports.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Account/ViewReports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWaWV3UmVwb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/AddressDetailsForm.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/AddressDetailsForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBZGRyZXNzRGV0YWlsc0Zvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/ChangePassword.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/ForgotPassword.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/Login.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/PasswordResetLink.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/PasswordResetLink.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxQYXNzd29yZFJlc2V0TGluay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/PersonalDetailsForm.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/PersonalDetailsForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxQZXJzb25hbERldGFpbHNGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/Register.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Home/Index.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Home/Privacy.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Home/Success.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Home/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/ChatBox.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/ChatBox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2VuZ2VyXENoYXRCb3guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/MyConnectionsForMsg.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/MyConnectionsForMsg.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2VuZ2VyXE15Q29ubmVjdGlvbnNGb3JNc2cuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/SendMessage.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/SendMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2VuZ2VyXFNlbmRNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/AddressInfo.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/AddressInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcQWRkcmVzc0luZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Gallery.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Gallery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcR2FsbGVyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/GenerateReport.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/GenerateReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcR2VuZXJhdGVSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/ImageDetails.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/ImageDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcSW1hZ2VEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Index.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyConnections.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyConnections.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcTXlDb25uZWN0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyProfile.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcTXlQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyRequests.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcTXlSZXF1ZXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyUploads.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/MyUploads.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcTXlVcGxvYWRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/OthersProfile.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/OthersProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcT3RoZXJzUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/PersonalInfo.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/PersonalInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcUGVyc29uYWxJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/ResponsiveSidebar.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/ResponsiveSidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcUmVzcG9uc2l2ZVNpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Search.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/SearchMenu.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/SearchMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcU2VhcmNoTWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/SearchResult.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/SearchResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcU2VhcmNoUmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Sidebar.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/ProfilePage/Sidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVBhZ2VcU2lkZWJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/Error.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/ResponsiveSidebar.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/ResponsiveSidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlc3BvbnNpdmVTaWRlYmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/Sidebar.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/Sidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/_ViewImports.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/_ViewStart.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/Messenger.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/Messenger.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2VuZ2VyXE1lc3Nlbmdlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-j4n7idrb2o
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/MyMessenger.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Messenger/MyMessenger.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2VuZ2VyXE15TWVzc2VuZ2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-lwzk2gpubx
 
-[D:/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/_Layout.cshtml]
+[C:/Users/Jeremy/Desktop/GIT REPO/Matrimonial_App/Happy_Marriage/Happy_Marriage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vf3e753k02

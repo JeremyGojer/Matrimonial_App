@@ -4,17 +4,17 @@ use happy_marriage;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(50), email VARCHAR(50), password VARCHAR(20), contactnumber VARCHAR(20), role VARCHAR(30), joinedon DATE,imageurl TEXT,approvalstatus VARCHAR(50), PRIMARY KEY(userid));
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Jeremy","gojerjeremy@gmail.com","Jeremy","+917019294131","admin","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("IronMan","ironman@avengers.com","Tony","+915345645321","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("CaptianAmerica","capam@avengers.com","Steve","+915542579411","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Hulk","hulk@avengers.com","Bruce","+915674834642","user","2021-01-01","/images/Default_Profile_Pic.jpg","Not Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("BlackWidow","widow@avengers.com","Natasha","+916574653546","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Hawkeye","hawkeye@avengers.com","Clint","+912154512154","user","2021-01-01","/images/Default_Profile_Pic.jpg","Rejected");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Thor","thor@avengers.com","Thor","+914568413256","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("ScarletWitch","wanda@avengers.com","Wanda","+916456421364","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("DoctorStrange","strange@kamartaj.com","Steven","+914597213546","admin","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Groot","groot@gog.com","IAmGroot","+9194214823546","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
-INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl) VALUES("Witch","wanda@avengers.com","Wanda","+916456421364","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("Jeremy","gojerjeremy@gmail.com","Jeremy","+917019294131","admin","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("IronMan","ironman@avengers.com","Tony","+915345645321","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("CaptianAmerica","capam@avengers.com","Steve","+915542579411","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("Hulk","hulk@avengers.com","Bruce","+915674834642","user","2021-01-01","/images/Default_Profile_Pic.jpg","Not Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("BlackWidow","widow@avengers.com","Natasha","+916574653546","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("Hawkeye","hawkeye@avengers.com","Clint","+912154512154","user","2021-01-01","/images/Default_Profile_Pic.jpg","Rejected");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("Thor","thor@avengers.com","Thor","+914568413256","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("ScarletWitch","wanda@avengers.com","Wanda","+916456421364","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("DoctorStrange","strange@kamartaj.com","Steven","+914597213546","admin","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("Groot","groot@gog.com","IAmGroot","+9194214823546","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
+INSERT INTO users(username, email, password, contactnumber, role, joinedon, imageurl, approvalstatus) VALUES("Witch","wanda@avengers.com","Wanda","+916456421364","user","2021-01-01","/images/Default_Profile_Pic.jpg","Approved");
 
 DROP TABLE IF EXISTS users_info;
 CREATE TABLE users_info(userid INT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50), gender VARCHAR(20), dateofbirth DATE, job VARCHAR(50),education VARCHAR(50), religion VARCHAR(30), PRIMARY KEY(userid));
@@ -76,3 +76,15 @@ CREATE TABLE users_friendships(id INT NOT NULL AUTO_INCREMENT, userid1 INT, user
 DROP TABLE IF EXISTS users_reports;
 CREATE TABLE users_reports(id INT NOT NULL AUTO_INCREMENT, reportedon INT, reportedby INT, description VARCHAR(300), createdon DATETIME, PRIMARY KEY(id));
 
+CREATE TABLE users_metadata(userid INT, coverpicture TEXT, isonline BOOLEAN);
+INSERT INTO users_metadata VALUES(1,"",false);
+INSERT INTO users_metadata VALUES(2,"",false);
+INSERT INTO users_metadata VALUES(3,"",false);
+INSERT INTO users_metadata VALUES(4,"",false);
+INSERT INTO users_metadata VALUES(5,"",false);
+INSERT INTO users_metadata VALUES(6,"",false);
+INSERT INTO users_metadata VALUES(7,"",false);
+INSERT INTO users_metadata VALUES(8,"",false);
+INSERT INTO users_metadata VALUES(9,"",false);
+INSERT INTO users_metadata VALUES(10,"",false);
+INSERT INTO users_metadata VALUES(11,"",false);

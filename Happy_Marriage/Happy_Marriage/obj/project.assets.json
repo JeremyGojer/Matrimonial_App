@@ -10007,19 +10007,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jerem\\.nuget\\packages\\": {}
+    "C:\\Users\\Jeremy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
+      "projectUniqueName": "C:\\Users\\Jeremy\\Desktop\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
       "projectName": "Happy_Marriage",
-      "projectPath": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
-      "packagesPath": "C:\\Users\\jerem\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\obj\\",
+      "projectPath": "C:\\Users\\Jeremy\\Desktop\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\Happy_Marriage.csproj",
+      "packagesPath": "C:\\Users\\Jeremy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jeremy\\Desktop\\GIT REPO\\Matrimonial_App\\Happy_Marriage\\Happy_Marriage\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jeremy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10077,7 +10077,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
