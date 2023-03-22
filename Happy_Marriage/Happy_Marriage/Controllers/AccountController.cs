@@ -15,12 +15,14 @@ namespace Happy_Marriage.Controllers
         private readonly ILogger<AccountController> _logger;
         private readonly IUserServices _userServices;
         private readonly IAccountServices _accountServices;
+        private readonly IEmailServices _emailServices;
 
-        public AccountController(ILogger<AccountController> logger, IUserServices userServices, IAccountServices accountServices)
+        public AccountController(ILogger<AccountController> logger, IUserServices userServices, IAccountServices accountServices, IEmailServices emailServices)
         {
             _logger = logger;
             _userServices = userServices;
             _accountServices = accountServices;
+            _emailServices = emailServices;
         }
 
         public IActionResult Index()
@@ -35,6 +37,11 @@ namespace Happy_Marriage.Controllers
             if (uid.Equals(guid)) {
                 return View();
             }
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult AdminLogOut()
+        {
+            HttpContext.Session.Remove("admin");
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]

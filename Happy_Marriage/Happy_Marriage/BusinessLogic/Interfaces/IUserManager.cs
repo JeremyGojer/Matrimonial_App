@@ -9,6 +9,7 @@ namespace Happy_Marriage.BusinessLogic.Interfaces
         public User Delete(User user);
         public User Update(User user);
         public User GetUserByEmail(string email);
+        public List<string> AdminList();
         public User GetUserByUserId(int userid);
         public User GetUserByUserName(string username);
         public bool ResetPassword(string userName, string password);

@@ -28,8 +28,9 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string password) {
+        public IActionResult Login(string email, string password, string admin) {
             User user = _userServices.GetUserByEmail(email);
+            
             if (user != null && user.Password == password && user.ApprovalStatus == "Approved")
             {
                 //Redirect to landing page

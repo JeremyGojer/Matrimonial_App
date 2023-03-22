@@ -52,6 +52,11 @@ namespace Happy_Marriage.BusinessLogic
             return user;
         }
 
+        public List<string> AdminList() {
+            var list = from users in dBEntityContext.Users where users.Role == "admin" select users.Email;
+            return list.ToList();
+        }
+
         public User GetUserByUserId(int userid) {
             var list = from users in dBEntityContext.Users where users.UserId == userid select users;
             User user = list.FirstOrDefault(u => u.UserId == userid);

@@ -28,7 +28,7 @@
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg" oninput="checkAdmin()"/>
                                         <label class="form-label" for="email">Email address</label>
                                     </div>
 
@@ -39,6 +39,9 @@
                                     @if (msg != null) {
                                         <div style="color:red;">@msg</div>
                                     }
+                                    <div id="ifadmin">
+
+                                    </div>
                                     <div class="pt-1 mb-4">
                                         <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                                     </div>
@@ -60,3 +63,38 @@
         </div>
     </div>
 </section>
+
+@section Scripts{
+    <script>
+        var email = "";
+        function checkAdmin() {
+            email = document.getElementById("email").value;
+            
+
+            $.ajax({
+                type: "GET",
+
+                url: "/Api/CheckAdmin/",
+                datatype: "json",
+                success: (result) => {
+                    str = "";
+                    
+                    for (var x in result.value) {
+                        
+                        if (result.value[x] == email) {
+                            //str += `<input type="checkbox" id="admin" name="admin" value="admin"/>
+                            //        <label for="admin">Admin Login<label>`;
+                            str += `<a href="http://localhost:5233/Account/AdminLogin/?uid=Jeremy">Go to Admin Login</a>`
+                        }
+                    }
+                    document.getElementById("ifadmin").innerHTML = str;
+                },
+                error: (req, status, error) => {
+                    console.log("AN ERROR OCCURED WITH AJAX");
+                }
+
+            });
+        }
+        
+    </script>
+}

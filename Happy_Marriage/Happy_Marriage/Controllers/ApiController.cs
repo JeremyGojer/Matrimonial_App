@@ -49,6 +49,12 @@ namespace Happy_Marriage.Controllers
             List<string> district = _ajaxServices.GetDistrictsFromState(cs);
             return new JsonResult(Ok(district));
         }
+        [HttpGet("CheckAdmin")]
+        public JsonResult CheckAdmin() 
+        {
+            List<string> admins = _userServices.AdminList();
+            return new JsonResult(Ok(admins));
+        }
 
         [HttpGet("AllUsers")]
         public JsonResult AllUsers()
