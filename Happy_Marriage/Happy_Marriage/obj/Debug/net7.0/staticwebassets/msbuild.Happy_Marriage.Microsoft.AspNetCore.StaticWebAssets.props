@@ -1664,5 +1664,21 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\User_Uploads\Jeremyc683822d-d292-4bea-b1ec-e5065ed572ba.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\User_Uploads\Jeremyf6c6d087-9aaf-49f5-9af9-6dd2ae5a9baa.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Happy_Marriage</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Happy_Marriage</BasePath>
+      <RelativePath>User_Uploads/Jeremyf6c6d087-9aaf-49f5-9af9-6dd2ae5a9baa.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\User_Uploads\Jeremyf6c6d087-9aaf-49f5-9af9-6dd2ae5a9baa.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

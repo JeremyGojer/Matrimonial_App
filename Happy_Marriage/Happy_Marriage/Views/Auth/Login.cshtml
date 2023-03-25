@@ -18,7 +18,7 @@
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
 
-                                <form method="post" action="/Auth/Login">
+                                <form>
 
                                     <div class="d-flex align-items-center mb-3 pb-1">
                                         <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -43,7 +43,7 @@
 
                                     </div>
                                     <div class="pt-1 mb-4">
-                                        <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit" formmethod="post" formaction="/Auth/Login">Login</button>
                                     </div>
 
                                     <a class="small text-muted" href="/Auth/ForgotPassword">Forgot password?</a>
@@ -84,7 +84,7 @@
                         if (result.value[x] == email) {
                             //str += `<input type="checkbox" id="admin" name="admin" value="admin"/>
                             //        <label for="admin">Admin Login<label>`;
-                            str += `<a href="http://localhost:5233/Account/AdminLogin/?uid=Jeremy">Go to Admin Login</a>`
+                            str += `<button class="btn btn-dark btn-lg btn-block" type="submit" formaction="/Account/AdminLogin/" formmethod="post">Login As Admin</button>`
                         }
                     }
                     document.getElementById("ifadmin").innerHTML = str;

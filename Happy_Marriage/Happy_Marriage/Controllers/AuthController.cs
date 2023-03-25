@@ -28,7 +28,7 @@ namespace Happy_Marriage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string password, string admin) {
+        public IActionResult Login(string email, string password) {
             User user = _userServices.GetUserByEmail(email);
             
             if (user != null && user.Password == password && user.ApprovalStatus == "Approved")

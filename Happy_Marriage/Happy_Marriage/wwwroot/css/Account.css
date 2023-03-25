@@ -1,7 +1,5 @@
 ﻿#draggable-admin {
     flex-direction:row-reverse;
-    inline-size:max-content;
-    border-radius:10%;
     background-color:black;
     z-index:999;
     right:0;
